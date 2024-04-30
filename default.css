@@ -1,0 +1,86 @@
+/*
+	Design by Free CSS Templates
+	http://www.freecsstemplates.org
+	Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+/* Basic */
+
+*
+{
+	margin: 0em;
+	padding: 0em;
+}
+
+h1,h2
+{
+}
+
+body
+{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	color: #666;
+	background-color: #fff;
+}
+
+a
+{
+	color: #0077dd;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+.form1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #0099FF;
+}
+
+#content h2,h3,h4,h5,h6
+{
+	color: #545454;
+	margin-bottom: 1em;
+	border-bottom: dashed 1px #dfdfdf;
+	padding-bottom: 0.3em;
+}
+#content p
+{
+	margin-bottom: 1.5em;
+}
+
+td {
+	line-height: 25px;
+}
+
+.snoska1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #F0F0F0;
+	text-indent: 15px;
+}
+
+.polosi {
+	border-bottom: dashed 1px #dfdfdf;
+}
+
+.zag1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+.content1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333333;
+	text-align: justify;
+	text-indent: 25px;
+	line-height: 17px;
+}
