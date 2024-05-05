@@ -1,63 +1,63 @@
 <table  border="0" cellspacing="0" cellpadding="0">
 <tr>
    
-    <td colspan="3"><div align='left' class='snoska1'>Полная информация о луне:</div></td>  
+    <td colspan="3"><div align='left' class='snoska1'>РџРѕР»РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ Р»СѓРЅРµ:</div></td>  
        
 </tr>
 <tr>
-<?php $result1[img]="<img src='imgmoon/moon$moonday.jpg' alt='Лунный календарь' width='192' height='192'>";?>
-      <td rowspan="5"><?php echo  "$result1[img]" ?></td>
-      <td width="140px">Восход луны:</td>
+<?php $result1['img'] = "<img src='imgmoon/moon$moonday.jpg' alt='Р›СѓРЅРЅС‹Р№ РєР°Р»РµРЅРґР°СЂСЊ' width='192' height='192'>";?>
+      <td rowspan="5"><?php echo  $result1['img'] ?></td>
+      <td width="140px">Р’РѕСЃС…РѕРґ Р»СѓРЅС‹:</td>
     <td>
       <?php  echo "$mvos"; ?>
     </td>
   </tr>
   <tr class="polosi">
-    <td>Закат луны:</td>
+    <td>Р—Р°РєР°С‚ Р»СѓРЅС‹:</td>
     <td><?php  echo "$mzak"; ?></td>
   </tr>
   <tr class="polosi">
-    <td>Фаза луны:</td>
-    <td ><?php echo "<strong>$faza[0] с $phasesrez7</strong>"; ?></td>
+    <td>Р¤Р°Р·Р° Р»СѓРЅС‹:</td>
+    <td ><?php echo "<strong>$faza[0] СЃ $phasesrez7</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Луна в знаке:</td>
+    <td>Р›СѓРЅР° РІ Р·РЅР°РєРµ:</td>
     <td><?php  echo "<strong>$moonznk1 ($moondata[11])</strong>"; ?></td>   
   </tr>
   <tr class="polosi">
     <td>&nbsp;</td>
-    <td><?php echo "<strong>Лунный дом - $moondata[12]    $moondata[15]</strong>"; ?></td>
+    <td><?php echo "<strong>Р›СѓРЅРЅС‹Р№ РґРѕРј - $moondata[12]    $moondata[15]</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Видимость луны:</td>
+    <td>Р’РёРґРёРјРѕСЃС‚СЊ Р»СѓРЅС‹:</td>
     <td colspan="2"> <?php echo"<strong>$ppphase</strong>"; ?></td>   
   </tr>
   <tr>
-    <td>Дистанция до луны::</td>
+    <td>Р”РёСЃС‚Р°РЅС†РёСЏ РґРѕ Р»СѓРЅС‹::</td>
     <td colspan="2"><?php echo "<strong>$distanc</strong>"; ?></td>
   </tr>
   <tr class="polosi">
-    <td>Возраст луны:</td>
+    <td>Р’РѕР·СЂР°СЃС‚ Р»СѓРЅС‹:</td>
     <td colspan="2"><?php echo "<strong>$moonages</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Новолуние:</td>
+    <td>РќРѕРІРѕР»СѓРЅРёРµ:</td>
     <td colspan="2"><?php echo "<strong>$phasesrez1</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Вторая четверть:</td>
+    <td>Р’С‚РѕСЂР°СЏ С‡РµС‚РІРµСЂС‚СЊ:</td>
     <td colspan="2"><?php echo "<strong>$phasesrez2</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Полнолуние:</td>
+    <td>РџРѕР»РЅРѕР»СѓРЅРёРµ:</td>
     <td colspan="2"><?php echo "<strong>$phasesrez3</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Последняя четверть:</td>
+    <td>РџРѕСЃР»РµРґРЅСЏСЏ С‡РµС‚РІРµСЂС‚СЊ:</td>
     <td colspan="2"><?php echo "<strong>$phasesrez4</strong>"; ?></td>
   </tr>
   <tr>
-    <td>Новолуние:</td>
+    <td>РќРѕРІРѕР»СѓРЅРёРµ:</td>
     <td colspan="2"><?php echo "<strong>$phasesrez5</strong>"; ?></td>
     
    

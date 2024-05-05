@@ -1,9 +1,9 @@
 <?php 
-ini_set('display_errors', 0); //откл показ ошибок
-error_reporting(0);
-//ini_set('display_errors', 1); // показ ошибок
+// ini_set('display_errors', 0); //РѕС‚РєР» РїРѕРєР°Р· РѕС€РёР±РѕРє
+// error_reporting(0);
+//ini_set('display_errors', 1); // РїРѕРєР°Р· РѕС€РёР±РѕРє
 //error_reporting(E_ALL);
-date_default_timezone_set('Europe/Moscow'); // чтобы у хостера ошибки не сыпались
+date_default_timezone_set('Europe/Moscow'); // С‡С‚РѕР±С‹ Сѓ С…РѕСЃС‚РµСЂР° РѕС€РёР±РєРё РЅРµ СЃС‹РїР°Р»РёСЃСЊ
 
 if (isset ($_POST['dd'])) { $dd=$_POST['dd']; } else {$date_tek=time(); $dd=date("d",$date_tek); }
 $dd2=$dd-1; $dd3=$dd+1;
@@ -11,7 +11,7 @@ if (isset ($_POST['mm'])) { $mm=$_POST['mm']; } else {$date_tek=time(); $mm=date
 if (isset ($_POST['yy'])) { $yy=$_POST['yy']; } else {$date_tek=time(); $yy=date("Y",$date_tek); }
 if (isset ($_POST['chas'])) { $chas=$_POST['chas']; } else {$date_tek=time(); $chas=date("H",$date_tek); }
 if (isset ($_POST['min'])) { $min=$_POST['min']; } else {$date_tek=time(); $min=date("i",$date_tek); }
-if (isset ($_POST['city'])) { $city=$_POST['city']; } else { $city="Москва"; }
+if (isset ($_POST['city'])) { $city=$_POST['city']; } else { $city="РњРѕСЃРєРІР°"; }
 
 
 $leto=0;
@@ -20,197 +20,197 @@ $time=$chas.':'.$min.':'.'00';
 $time2='00:00:00';
 
 
-if ($city=="Орел")  { $myrow['north']=52.58;  $myrow['east']=36.06;  $myrow['gmt']=+3; }
-if ($city=="Брянск")  { $myrow['north']=53.16;  $myrow['east']=34.23;  $myrow['gmt']=+3; }
-if ($city=="Калуга")  { $myrow['north']=54.32;  $myrow['east']=36.16;  $myrow['gmt']=+3; }
-if ($city=="Москва")  { $myrow['north']=55.45;  $myrow['east']=37.37;  $myrow['gmt']=+3; }
-if ($city=="Калининград")  { $myrow['north']=54.41;  $myrow['east']=20.31;  $myrow['gmt']=+2; }
-if ($city=="Великий Новгород")  { $myrow['north']=58.31;  $myrow['east']=30.17;  $myrow['gmt']=+3; }
-if ($city=="Псков")  { $myrow['north']=57.49;  $myrow['east']=28.20;  $myrow['gmt']=+3; }
-if ($city=="Санкт-Петербург")  { $myrow['north']=59.57;  $myrow['east']=30.19;  $myrow['gmt']=+3; }
-if ($city=="Воркута")  { $myrow['north']=67.29;  $myrow['east']=64;  $myrow['gmt']=+3; }
-if ($city=="Сыктывкар")  { $myrow['north']=61.41;  $myrow['east']=50.49;  $myrow['gmt']=+3; }
-if ($city=="Вологда")  { $myrow['north']=59.13;  $myrow['east']=39.37;  $myrow['gmt']=+3; }
-if ($city=="Петрозаводск")  { $myrow['north']=61.46;  $myrow['east']=34.23;  $myrow['gmt']=+3; }
-if ($city=="Мурманск")  { $myrow['north']=68.59;  $myrow['east']=33.07;  $myrow['gmt']=+3; }
-if ($city=="Архангельск")  { $myrow['north']=64.36;  $myrow['east']=40.32;  $myrow['gmt']=+3; }
-if ($city=="Тула")  { $myrow['north']=54.12;  $myrow['east']=37.37;  $myrow['gmt']=+3; }
-if ($city=="Рязань")  { $myrow['north']=54.39;  $myrow['east']=39.43;  $myrow['gmt']=+3; }
-if ($city=="Владимир")  { $myrow['north']=56.08;  $myrow['east']=40.23;  $myrow['gmt']=+3; }
-if ($city=="Иваново")  { $myrow['north']=57.00;  $myrow['east']=40.58;  $myrow['gmt']=+3; }
-if ($city=="Кострома")  { $myrow['north']=57.47;  $myrow['east']=40.57;  $myrow['gmt']=+3; }
-if ($city=="Ярославль")  { $myrow['north']=57.38;  $myrow['east']=39.53;  $myrow['gmt']=+3; }
-if ($city=="Тверь")  { $myrow['north']=56.52;  $myrow['east']=35.55;  $myrow['gmt']=+3; }
-if ($city=="Смоленск")  { $myrow['north']=54.48;  $myrow['east']=32.02;  $myrow['gmt']=+3; }
-if ($city=="Курск")  { $myrow['north']=51.44;  $myrow['east']=36.11;  $myrow['gmt']=+3; }
-if ($city=="Железногорск")  { $myrow['north']=52.20;  $myrow['east']=35.21;  $myrow['gmt']=+3; }
-if ($city=="Белгород")  { $myrow['north']=50.36;  $myrow['east']=36.36;  $myrow['gmt']=+3; }
-if ($city=="Воронеж")  { $myrow['north']=51.40;  $myrow['east']=39.12;  $myrow['gmt']=+3; }
-if ($city=="Тамбов")  { $myrow['north']=52.43;  $myrow['east']=41.26;  $myrow['gmt']=+3; }
-if ($city=="Липецк")  { $myrow['north']=52.37;  $myrow['east']=39.37;  $myrow['gmt']=+3; }
-if ($city=="Киров")  { $myrow['north']=58.37;  $myrow['east']=49.43;  $myrow['gmt']=+3; }
-if ($city=="Йошкар-Ола")  { $myrow['north']=56.39;  $myrow['east']=47.53;  $myrow['gmt']=+3; }
-if ($city=="Чебоксары")  { $myrow['north']=56.08;  $myrow['east']=47.16;  $myrow['gmt']=+3; }
-if ($city=="Саранск")  { $myrow['north']=54.09;  $myrow['east']=45.09;  $myrow['gmt']=+3; }
-if ($city=="Нижний Новгород")  { $myrow['north']=56.20;  $myrow['east']=44.00;  $myrow['gmt']=+3; }
-if ($city=="Казань")  { $myrow['north']=55.47;  $myrow['east']=49.08;  $myrow['gmt']=+3; }
-if ($city=="Пенза")  { $myrow['north']=53.13;  $myrow['east']=45.01;  $myrow['gmt']=+3; }
-if ($city=="Самара")  { $myrow['north']=53.12;  $myrow['east']=50.10;  $myrow['gmt']=+4; }
-if ($city=="Ульяновск")  { $myrow['north']=54.18;  $myrow['east']=48.12;  $myrow['gmt']=+3; }
-if ($city=="Саратов")  { $myrow['north']=51.31;  $myrow['east']=45.58;  $myrow['gmt']=+3; }
-if ($city=="Волгоград")  { $myrow['north']=48.43;  $myrow['east']=44.31;  $myrow['gmt']=+3; }
-if ($city=="Астрахань")  { $myrow['north']=46.22;  $myrow['east']=48.03;  $myrow['gmt']=+3; }
-if ($city=="Элиста")  { $myrow['north']=46.19;  $myrow['east']=44.15;  $myrow['gmt']=+3; }
-if ($city=="Ростов на Дону")  { $myrow['north']=47.13;  $myrow['east']=39.42;  $myrow['gmt']=+3; }
-if ($city=="Краснодар")  { $myrow['north']=45.02;  $myrow['east']=39.01;  $myrow['gmt']=+3; }
-if ($city=="Ставрополь")  { $myrow['north']=45.03;  $myrow['east']=41.59;  $myrow['gmt']=+3; }
-if ($city=="Нальчик")  { $myrow['north']=43.28;  $myrow['east']=43.37;  $myrow['gmt']=+3; }
-if ($city=="Владикавказ")  { $myrow['north']=43.01;  $myrow['east']=44.40;  $myrow['gmt']=+3; }
-if ($city=="Грозный")  { $myrow['north']=43.19;  $myrow['east']=45.40;  $myrow['gmt']=+3; }
-if ($city=="Махачкала")  { $myrow['north']=42.59;  $myrow['east']=47.29;  $myrow['gmt']=+3; }
-if ($city=="Пермь")  { $myrow['north']=58.00;  $myrow['east']=56.13;  $myrow['gmt']=+5; }
-if ($city=="Екатеринбург")  { $myrow['north']=56.51;  $myrow['east']=60.36;  $myrow['gmt']=+5; }
-if ($city=="Курган")  { $myrow['north']=55.27;  $myrow['east']=65.18;  $myrow['gmt']=+5; }
-if ($city=="Челябинск")  { $myrow['north']=55.10;  $myrow['east']=61.24;  $myrow['gmt']=+5; }
-if ($city=="Уфа")  { $myrow['north']=54.44;  $myrow['east']=55.58;  $myrow['gmt']=+5; }
-if ($city=="Оренбург")  { $myrow['north']=51.47;  $myrow['east']=55.03;  $myrow['gmt']=+5; }
-if ($city=="Ижевск")  { $myrow['north']=56.50;  $myrow['east']=53.12;  $myrow['gmt']=+4; }
-if ($city=="Кемерово")  { $myrow['north']=55.22;  $myrow['east']=86.05;  $myrow['gmt']=+7; }
-if ($city=="Барнаул")  { $myrow['north']=53.21;  $myrow['east']=83.46;  $myrow['gmt']=+6; }
-if ($city=="Новосибирск")  { $myrow['north']=55.02;  $myrow['east']=82.56;  $myrow['gmt']=+6; }
-if ($city=="Омск")  { $myrow['north']=55.00;  $myrow['east']=73.24;  $myrow['gmt']=+6; }
-if ($city=="Томск")  { $myrow['north']=56.29;  $myrow['east']=84.57;  $myrow['gmt']=+6; }
-if ($city=="Тюмень")  { $myrow['north']=57.09;  $myrow['east']=65.30;  $myrow['gmt']=+5; }
-if ($city=="Чита")  { $myrow['north']=52.02;  $myrow['east']=113.29;  $myrow['gmt']=+9; }
-if ($city=="Улан-Уде")  { $myrow['north']=51.50;  $myrow['east']=107.36;  $myrow['gmt']=+8; }
-if ($city=="Кызыл")  { $myrow['north']=51.42;  $myrow['east']=94.25;  $myrow['gmt']=+7; }
-if ($city=="Иркутск")  { $myrow['north']=52.19;  $myrow['east']=104.18;  $myrow['gmt']=+8; }
-if ($city=="Красноярск")  { $myrow['north']=56.00;  $myrow['east']=92.49;  $myrow['gmt']=+6; }
-if ($city=="Якутск")  { $myrow['north']=62.02;  $myrow['east']=129.39;  $myrow['gmt']=+9; }
-if ($city=="Благовещенск")  { $myrow['north']=50.15;  $myrow['east']=127.34;  $myrow['gmt']=+9; }
-if ($city=="Биробиджан")  { $myrow['north']=48.48;  $myrow['east']=132.55;  $myrow['gmt']=+10; }
-if ($city=="Хабаровск")  { $myrow['north']=48.29;  $myrow['east']=135.05;  $myrow['gmt']=+10; }
-if ($city=="Владивосток")  { $myrow['north']=43.07;  $myrow['east']=131.55;  $myrow['gmt']=+10; }
-if ($city=="Магадан")  { $myrow['north']=59.35;  $myrow['east']=150.48;  $myrow['gmt']=+11; }
-if ($city=="Петропавловск Камч")  { $myrow['north']=53.03;  $myrow['east']=158.39;  $myrow['gmt']=+12; }
-if ($city=="Южно Сахалинск")  { $myrow['north']=46.58;  $myrow['east']=142.45;  $myrow['gmt']=+10; }
-if ($city=="Таллин")  { $myrow['north']=59.25;  $myrow['east']=24.45;  $myrow['gmt']=+2; }
-if ($city=="Рига")  { $myrow['north']=56.58;  $myrow['east']=24.05;  $myrow['gmt']=+2; }
-if ($city=="Вильнюс")  { $myrow['north']=54.41;  $myrow['east']=25.17;  $myrow['gmt']=+2; }
-if ($city=="Минск")  { $myrow['north']=53.55;  $myrow['east']=27.35;  $myrow['gmt']=+3; }
-if ($city=="Витебск")  { $myrow['north']=55.11;  $myrow['east']=30.10;  $myrow['gmt']=+3; }
-if ($city=="Могилев")  { $myrow['north']=53.54;  $myrow['east']=30.21;  $myrow['gmt']=+2; }
-if ($city=="Гомель")  { $myrow['north']=52.40;  $myrow['east']=31.00;  $myrow['gmt']=+3; }
-if ($city=="Брест")  { $myrow['north']=52.06;  $myrow['east']=23.42;  $myrow['gmt']=+2; }
-if ($city=="Гродно")  { $myrow['north']=53.40;  $myrow['east']=23.50;  $myrow['gmt']=+3; }
-if ($city=="Киев")  { $myrow['north']=50.25;  $myrow['east']=30.30;  $myrow['gmt']=+2; }
-if ($city=="Чернигов")  { $myrow['north']=51.30;  $myrow['east']=31.16;  $myrow['gmt']=+2; }
-if ($city=="Сумы")  { $myrow['north']=50.54;  $myrow['east']=34.46;  $myrow['gmt']=+2; }
-if ($city=="Полтава")  { $myrow['north']=49.36;  $myrow['east']=34.33;  $myrow['gmt']=+2; }
-if ($city=="Харьков")  { $myrow['north']=50.00;  $myrow['east']=36.15;  $myrow['gmt']=+2; }
-if ($city=="Луганск")  { $myrow['north']=48.34;  $myrow['east']=39.20;  $myrow['gmt']=+2; }
-if ($city=="Донецк")  { $myrow['north']=48.00;  $myrow['east']=37.46;  $myrow['gmt']=+3; }
-if ($city=="Запорожье")  { $myrow['north']=47.49;  $myrow['east']=35.10;  $myrow['gmt']=+2; }
-if ($city=="Херсон")  { $myrow['north']=46.38;  $myrow['east']=32.37;  $myrow['gmt']=+2; }
-if ($city=="Днепропетровск")  { $myrow['north']=48.27;  $myrow['east']=34.59;  $myrow['gmt']=+2; }
-if ($city=="Черкассы")  { $myrow['north']=49.26;  $myrow['east']=32.03;  $myrow['gmt']=+2; }
-if ($city=="Кировоград")  { $myrow['north']=48.30;  $myrow['east']=32.18;  $myrow['gmt']=+2; }
-if ($city=="Николаев")  { $myrow['north']=46.58;  $myrow['east']=32.00;  $myrow['gmt']=+2; }
-if ($city=="Одесса")  { $myrow['north']=46.28;  $myrow['east']=30.44;  $myrow['gmt']=+2; }
-if ($city=="Житомир")  { $myrow['north']=50.15;  $myrow['east']=28.40;  $myrow['gmt']=+3; }
-if ($city=="Винница")  { $myrow['north']=49.14;  $myrow['east']=28.27;  $myrow['gmt']=+3; }
-if ($city=="Ровно")  { $myrow['north']=50.37;  $myrow['east']=26.15;  $myrow['gmt']=+2; }
-if ($city=="Хмельницкий")  { $myrow['north']=49.25;  $myrow['east']=26.59;  $myrow['gmt']=+2; }
-if ($city=="Тернополь")  { $myrow['north']=49.33;  $myrow['east']=25.26;  $myrow['gmt']=+2; }
-if ($city=="Львов")  { $myrow['north']=49.49;  $myrow['east']=24.01;  $myrow['gmt']=+2; }
-if ($city=="Симферополь")  { $myrow['north']=44.57;  $myrow['east']=34.06;  $myrow['gmt']=+2; }
-if ($city=="Кишинев")  { $myrow['north']=47.01;  $myrow['east']=28.49;  $myrow['gmt']=+2; }
-if ($city=="Тбилиси")  { $myrow['north']=41.41;  $myrow['east']=44.51;  $myrow['gmt']=+4; }
-if ($city=="Цхинвал")  { $myrow['north']=42.14;  $myrow['east']=43.57;  $myrow['gmt']=+3; }
-if ($city=="Батуми")  { $myrow['north']=41.38;  $myrow['east']=41.40;  $myrow['gmt']=+3; }
-if ($city=="Сухуми")  { $myrow['north']=43.00;  $myrow['east']=42.01;  $myrow['gmt']=+3; }
-if ($city=="Ереван")  { $myrow['north']=40.11;  $myrow['east']=44.32;  $myrow['gmt']=+4; }
-if ($city=="Баку")  { $myrow['north']=40.23;  $myrow['east']=49.52;  $myrow['gmt']=+4; }
-if ($city=="Алма-Ата")  { $myrow['north']=43.46;  $myrow['east']=76.56;  $myrow['gmt']=+6; }
-if ($city=="Талды-Курган")  { $myrow['north']=44.59;  $myrow['east']=78.20;  $myrow['gmt']=+6; }
-if ($city=="Семипалатинск")  { $myrow['north']=50.27;  $myrow['east']=80.14;  $myrow['gmt']=+6; }
-if ($city=="Павлодар")  { $myrow['north']=52.17;  $myrow['east']=76.57;  $myrow['gmt']=+6; }
-if ($city=="Канск")  { $myrow['north']=56.12;  $myrow['east']=95.42;  $myrow['gmt']=+7; }
-if ($city=="Комсомольск-на-Амуре")  { $myrow['north']=50.33;  $myrow['east']=137.00;  $myrow['gmt']=+10; }
-if ($city=="Магнитогорск")  { $myrow['north']=53.23;  $myrow['east']=59.02;  $myrow['gmt']=+5; }
-if ($city=="Нефтеюганск")  { $myrow['north']=61.06;  $myrow['east']=72.36;  $myrow['gmt']=+5; }
-if ($city=="Новороссийск")  { $myrow['north']=44.43;  $myrow['east']=37.46;  $myrow['gmt']=+3; }
-if ($city=="Норильск")  { $myrow['north']=69.20;  $myrow['east']=88.13;  $myrow['gmt']=+7; }
+if ($city=="РћСЂРµР»")  { $myrow['north']=52.58;  $myrow['east']=36.06;  $myrow['gmt']=+3; }
+if ($city=="Р‘СЂСЏРЅСЃРє")  { $myrow['north']=53.16;  $myrow['east']=34.23;  $myrow['gmt']=+3; }
+if ($city=="РљР°Р»СѓРіР°")  { $myrow['north']=54.32;  $myrow['east']=36.16;  $myrow['gmt']=+3; }
+if ($city=="РњРѕСЃРєРІР°")  { $myrow['north']=55.45;  $myrow['east']=37.37;  $myrow['gmt']=+3; }
+if ($city=="РљР°Р»РёРЅРёРЅРіСЂР°Рґ")  { $myrow['north']=54.41;  $myrow['east']=20.31;  $myrow['gmt']=+2; }
+if ($city=="Р’РµР»РёРєРёР№ РќРѕРІРіРѕСЂРѕРґ")  { $myrow['north']=58.31;  $myrow['east']=30.17;  $myrow['gmt']=+3; }
+if ($city=="РџСЃРєРѕРІ")  { $myrow['north']=57.49;  $myrow['east']=28.20;  $myrow['gmt']=+3; }
+if ($city=="РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРі")  { $myrow['north']=59.57;  $myrow['east']=30.19;  $myrow['gmt']=+3; }
+if ($city=="Р’РѕСЂРєСѓС‚Р°")  { $myrow['north']=67.29;  $myrow['east']=64;  $myrow['gmt']=+3; }
+if ($city=="РЎС‹РєС‚С‹РІРєР°СЂ")  { $myrow['north']=61.41;  $myrow['east']=50.49;  $myrow['gmt']=+3; }
+if ($city=="Р’РѕР»РѕРіРґР°")  { $myrow['north']=59.13;  $myrow['east']=39.37;  $myrow['gmt']=+3; }
+if ($city=="РџРµС‚СЂРѕР·Р°РІРѕРґСЃРє")  { $myrow['north']=61.46;  $myrow['east']=34.23;  $myrow['gmt']=+3; }
+if ($city=="РњСѓСЂРјР°РЅСЃРє")  { $myrow['north']=68.59;  $myrow['east']=33.07;  $myrow['gmt']=+3; }
+if ($city=="РђСЂС…Р°РЅРіРµР»СЊСЃРє")  { $myrow['north']=64.36;  $myrow['east']=40.32;  $myrow['gmt']=+3; }
+if ($city=="РўСѓР»Р°")  { $myrow['north']=54.12;  $myrow['east']=37.37;  $myrow['gmt']=+3; }
+if ($city=="Р СЏР·Р°РЅСЊ")  { $myrow['north']=54.39;  $myrow['east']=39.43;  $myrow['gmt']=+3; }
+if ($city=="Р’Р»Р°РґРёРјРёСЂ")  { $myrow['north']=56.08;  $myrow['east']=40.23;  $myrow['gmt']=+3; }
+if ($city=="РРІР°РЅРѕРІРѕ")  { $myrow['north']=57.00;  $myrow['east']=40.58;  $myrow['gmt']=+3; }
+if ($city=="РљРѕСЃС‚СЂРѕРјР°")  { $myrow['north']=57.47;  $myrow['east']=40.57;  $myrow['gmt']=+3; }
+if ($city=="РЇСЂРѕСЃР»Р°РІР»СЊ")  { $myrow['north']=57.38;  $myrow['east']=39.53;  $myrow['gmt']=+3; }
+if ($city=="РўРІРµСЂСЊ")  { $myrow['north']=56.52;  $myrow['east']=35.55;  $myrow['gmt']=+3; }
+if ($city=="РЎРјРѕР»РµРЅСЃРє")  { $myrow['north']=54.48;  $myrow['east']=32.02;  $myrow['gmt']=+3; }
+if ($city=="РљСѓСЂСЃРє")  { $myrow['north']=51.44;  $myrow['east']=36.11;  $myrow['gmt']=+3; }
+if ($city=="Р–РµР»РµР·РЅРѕРіРѕСЂСЃРє")  { $myrow['north']=52.20;  $myrow['east']=35.21;  $myrow['gmt']=+3; }
+if ($city=="Р‘РµР»РіРѕСЂРѕРґ")  { $myrow['north']=50.36;  $myrow['east']=36.36;  $myrow['gmt']=+3; }
+if ($city=="Р’РѕСЂРѕРЅРµР¶")  { $myrow['north']=51.40;  $myrow['east']=39.12;  $myrow['gmt']=+3; }
+if ($city=="РўР°РјР±РѕРІ")  { $myrow['north']=52.43;  $myrow['east']=41.26;  $myrow['gmt']=+3; }
+if ($city=="Р›РёРїРµС†Рє")  { $myrow['north']=52.37;  $myrow['east']=39.37;  $myrow['gmt']=+3; }
+if ($city=="РљРёСЂРѕРІ")  { $myrow['north']=58.37;  $myrow['east']=49.43;  $myrow['gmt']=+3; }
+if ($city=="Р™РѕС€РєР°СЂ-РћР»Р°")  { $myrow['north']=56.39;  $myrow['east']=47.53;  $myrow['gmt']=+3; }
+if ($city=="Р§РµР±РѕРєСЃР°СЂС‹")  { $myrow['north']=56.08;  $myrow['east']=47.16;  $myrow['gmt']=+3; }
+if ($city=="РЎР°СЂР°РЅСЃРє")  { $myrow['north']=54.09;  $myrow['east']=45.09;  $myrow['gmt']=+3; }
+if ($city=="РќРёР¶РЅРёР№ РќРѕРІРіРѕСЂРѕРґ")  { $myrow['north']=56.20;  $myrow['east']=44.00;  $myrow['gmt']=+3; }
+if ($city=="РљР°Р·Р°РЅСЊ")  { $myrow['north']=55.47;  $myrow['east']=49.08;  $myrow['gmt']=+3; }
+if ($city=="РџРµРЅР·Р°")  { $myrow['north']=53.13;  $myrow['east']=45.01;  $myrow['gmt']=+3; }
+if ($city=="РЎР°РјР°СЂР°")  { $myrow['north']=53.12;  $myrow['east']=50.10;  $myrow['gmt']=+4; }
+if ($city=="РЈР»СЊСЏРЅРѕРІСЃРє")  { $myrow['north']=54.18;  $myrow['east']=48.12;  $myrow['gmt']=+3; }
+if ($city=="РЎР°СЂР°С‚РѕРІ")  { $myrow['north']=51.31;  $myrow['east']=45.58;  $myrow['gmt']=+3; }
+if ($city=="Р’РѕР»РіРѕРіСЂР°Рґ")  { $myrow['north']=48.43;  $myrow['east']=44.31;  $myrow['gmt']=+3; }
+if ($city=="РђСЃС‚СЂР°С…Р°РЅСЊ")  { $myrow['north']=46.22;  $myrow['east']=48.03;  $myrow['gmt']=+3; }
+if ($city=="Р­Р»РёСЃС‚Р°")  { $myrow['north']=46.19;  $myrow['east']=44.15;  $myrow['gmt']=+3; }
+if ($city=="Р РѕСЃС‚РѕРІ РЅР° Р”РѕРЅСѓ")  { $myrow['north']=47.13;  $myrow['east']=39.42;  $myrow['gmt']=+3; }
+if ($city=="РљСЂР°СЃРЅРѕРґР°СЂ")  { $myrow['north']=45.02;  $myrow['east']=39.01;  $myrow['gmt']=+3; }
+if ($city=="РЎС‚Р°РІСЂРѕРїРѕР»СЊ")  { $myrow['north']=45.03;  $myrow['east']=41.59;  $myrow['gmt']=+3; }
+if ($city=="РќР°Р»СЊС‡РёРє")  { $myrow['north']=43.28;  $myrow['east']=43.37;  $myrow['gmt']=+3; }
+if ($city=="Р’Р»Р°РґРёРєР°РІРєР°Р·")  { $myrow['north']=43.01;  $myrow['east']=44.40;  $myrow['gmt']=+3; }
+if ($city=="Р“СЂРѕР·РЅС‹Р№")  { $myrow['north']=43.19;  $myrow['east']=45.40;  $myrow['gmt']=+3; }
+if ($city=="РњР°С…Р°С‡РєР°Р»Р°")  { $myrow['north']=42.59;  $myrow['east']=47.29;  $myrow['gmt']=+3; }
+if ($city=="РџРµСЂРјСЊ")  { $myrow['north']=58.00;  $myrow['east']=56.13;  $myrow['gmt']=+5; }
+if ($city=="Р•РєР°С‚РµСЂРёРЅР±СѓСЂРі")  { $myrow['north']=56.51;  $myrow['east']=60.36;  $myrow['gmt']=+5; }
+if ($city=="РљСѓСЂРіР°РЅ")  { $myrow['north']=55.27;  $myrow['east']=65.18;  $myrow['gmt']=+5; }
+if ($city=="Р§РµР»СЏР±РёРЅСЃРє")  { $myrow['north']=55.10;  $myrow['east']=61.24;  $myrow['gmt']=+5; }
+if ($city=="РЈС„Р°")  { $myrow['north']=54.44;  $myrow['east']=55.58;  $myrow['gmt']=+5; }
+if ($city=="РћСЂРµРЅР±СѓСЂРі")  { $myrow['north']=51.47;  $myrow['east']=55.03;  $myrow['gmt']=+5; }
+if ($city=="РР¶РµРІСЃРє")  { $myrow['north']=56.50;  $myrow['east']=53.12;  $myrow['gmt']=+4; }
+if ($city=="РљРµРјРµСЂРѕРІРѕ")  { $myrow['north']=55.22;  $myrow['east']=86.05;  $myrow['gmt']=+7; }
+if ($city=="Р‘Р°СЂРЅР°СѓР»")  { $myrow['north']=53.21;  $myrow['east']=83.46;  $myrow['gmt']=+6; }
+if ($city=="РќРѕРІРѕСЃРёР±РёСЂСЃРє")  { $myrow['north']=55.02;  $myrow['east']=82.56;  $myrow['gmt']=+6; }
+if ($city=="РћРјСЃРє")  { $myrow['north']=55.00;  $myrow['east']=73.24;  $myrow['gmt']=+6; }
+if ($city=="РўРѕРјСЃРє")  { $myrow['north']=56.29;  $myrow['east']=84.57;  $myrow['gmt']=+6; }
+if ($city=="РўСЋРјРµРЅСЊ")  { $myrow['north']=57.09;  $myrow['east']=65.30;  $myrow['gmt']=+5; }
+if ($city=="Р§РёС‚Р°")  { $myrow['north']=52.02;  $myrow['east']=113.29;  $myrow['gmt']=+9; }
+if ($city=="РЈР»Р°РЅ-РЈРґРµ")  { $myrow['north']=51.50;  $myrow['east']=107.36;  $myrow['gmt']=+8; }
+if ($city=="РљС‹Р·С‹Р»")  { $myrow['north']=51.42;  $myrow['east']=94.25;  $myrow['gmt']=+7; }
+if ($city=="РСЂРєСѓС‚СЃРє")  { $myrow['north']=52.19;  $myrow['east']=104.18;  $myrow['gmt']=+8; }
+if ($city=="РљСЂР°СЃРЅРѕСЏСЂСЃРє")  { $myrow['north']=56.00;  $myrow['east']=92.49;  $myrow['gmt']=+6; }
+if ($city=="РЇРєСѓС‚СЃРє")  { $myrow['north']=62.02;  $myrow['east']=129.39;  $myrow['gmt']=+9; }
+if ($city=="Р‘Р»Р°РіРѕРІРµС‰РµРЅСЃРє")  { $myrow['north']=50.15;  $myrow['east']=127.34;  $myrow['gmt']=+9; }
+if ($city=="Р‘РёСЂРѕР±РёРґР¶Р°РЅ")  { $myrow['north']=48.48;  $myrow['east']=132.55;  $myrow['gmt']=+10; }
+if ($city=="РҐР°Р±Р°СЂРѕРІСЃРє")  { $myrow['north']=48.29;  $myrow['east']=135.05;  $myrow['gmt']=+10; }
+if ($city=="Р’Р»Р°РґРёРІРѕСЃС‚РѕРє")  { $myrow['north']=43.07;  $myrow['east']=131.55;  $myrow['gmt']=+10; }
+if ($city=="РњР°РіР°РґР°РЅ")  { $myrow['north']=59.35;  $myrow['east']=150.48;  $myrow['gmt']=+11; }
+if ($city=="РџРµС‚СЂРѕРїР°РІР»РѕРІСЃРє РљР°РјС‡")  { $myrow['north']=53.03;  $myrow['east']=158.39;  $myrow['gmt']=+12; }
+if ($city=="Р®Р¶РЅРѕ РЎР°С…Р°Р»РёРЅСЃРє")  { $myrow['north']=46.58;  $myrow['east']=142.45;  $myrow['gmt']=+10; }
+if ($city=="РўР°Р»Р»РёРЅ")  { $myrow['north']=59.25;  $myrow['east']=24.45;  $myrow['gmt']=+2; }
+if ($city=="Р РёРіР°")  { $myrow['north']=56.58;  $myrow['east']=24.05;  $myrow['gmt']=+2; }
+if ($city=="Р’РёР»СЊРЅСЋСЃ")  { $myrow['north']=54.41;  $myrow['east']=25.17;  $myrow['gmt']=+2; }
+if ($city=="РњРёРЅСЃРє")  { $myrow['north']=53.55;  $myrow['east']=27.35;  $myrow['gmt']=+3; }
+if ($city=="Р’РёС‚РµР±СЃРє")  { $myrow['north']=55.11;  $myrow['east']=30.10;  $myrow['gmt']=+3; }
+if ($city=="РњРѕРіРёР»РµРІ")  { $myrow['north']=53.54;  $myrow['east']=30.21;  $myrow['gmt']=+2; }
+if ($city=="Р“РѕРјРµР»СЊ")  { $myrow['north']=52.40;  $myrow['east']=31.00;  $myrow['gmt']=+3; }
+if ($city=="Р‘СЂРµСЃС‚")  { $myrow['north']=52.06;  $myrow['east']=23.42;  $myrow['gmt']=+2; }
+if ($city=="Р“СЂРѕРґРЅРѕ")  { $myrow['north']=53.40;  $myrow['east']=23.50;  $myrow['gmt']=+3; }
+if ($city=="РљРёРµРІ")  { $myrow['north']=50.25;  $myrow['east']=30.30;  $myrow['gmt']=+2; }
+if ($city=="Р§РµСЂРЅРёРіРѕРІ")  { $myrow['north']=51.30;  $myrow['east']=31.16;  $myrow['gmt']=+2; }
+if ($city=="РЎСѓРјС‹")  { $myrow['north']=50.54;  $myrow['east']=34.46;  $myrow['gmt']=+2; }
+if ($city=="РџРѕР»С‚Р°РІР°")  { $myrow['north']=49.36;  $myrow['east']=34.33;  $myrow['gmt']=+2; }
+if ($city=="РҐР°СЂСЊРєРѕРІ")  { $myrow['north']=50.00;  $myrow['east']=36.15;  $myrow['gmt']=+2; }
+if ($city=="Р›СѓРіР°РЅСЃРє")  { $myrow['north']=48.34;  $myrow['east']=39.20;  $myrow['gmt']=+2; }
+if ($city=="Р”РѕРЅРµС†Рє")  { $myrow['north']=48.00;  $myrow['east']=37.46;  $myrow['gmt']=+3; }
+if ($city=="Р—Р°РїРѕСЂРѕР¶СЊРµ")  { $myrow['north']=47.49;  $myrow['east']=35.10;  $myrow['gmt']=+2; }
+if ($city=="РҐРµСЂСЃРѕРЅ")  { $myrow['north']=46.38;  $myrow['east']=32.37;  $myrow['gmt']=+2; }
+if ($city=="Р”РЅРµРїСЂРѕРїРµС‚СЂРѕРІСЃРє")  { $myrow['north']=48.27;  $myrow['east']=34.59;  $myrow['gmt']=+2; }
+if ($city=="Р§РµСЂРєР°СЃСЃС‹")  { $myrow['north']=49.26;  $myrow['east']=32.03;  $myrow['gmt']=+2; }
+if ($city=="РљРёСЂРѕРІРѕРіСЂР°Рґ")  { $myrow['north']=48.30;  $myrow['east']=32.18;  $myrow['gmt']=+2; }
+if ($city=="РќРёРєРѕР»Р°РµРІ")  { $myrow['north']=46.58;  $myrow['east']=32.00;  $myrow['gmt']=+2; }
+if ($city=="РћРґРµСЃСЃР°")  { $myrow['north']=46.28;  $myrow['east']=30.44;  $myrow['gmt']=+2; }
+if ($city=="Р–РёС‚РѕРјРёСЂ")  { $myrow['north']=50.15;  $myrow['east']=28.40;  $myrow['gmt']=+3; }
+if ($city=="Р’РёРЅРЅРёС†Р°")  { $myrow['north']=49.14;  $myrow['east']=28.27;  $myrow['gmt']=+3; }
+if ($city=="Р РѕРІРЅРѕ")  { $myrow['north']=50.37;  $myrow['east']=26.15;  $myrow['gmt']=+2; }
+if ($city=="РҐРјРµР»СЊРЅРёС†РєРёР№")  { $myrow['north']=49.25;  $myrow['east']=26.59;  $myrow['gmt']=+2; }
+if ($city=="РўРµСЂРЅРѕРїРѕР»СЊ")  { $myrow['north']=49.33;  $myrow['east']=25.26;  $myrow['gmt']=+2; }
+if ($city=="Р›СЊРІРѕРІ")  { $myrow['north']=49.49;  $myrow['east']=24.01;  $myrow['gmt']=+2; }
+if ($city=="РЎРёРјС„РµСЂРѕРїРѕР»СЊ")  { $myrow['north']=44.57;  $myrow['east']=34.06;  $myrow['gmt']=+2; }
+if ($city=="РљРёС€РёРЅРµРІ")  { $myrow['north']=47.01;  $myrow['east']=28.49;  $myrow['gmt']=+2; }
+if ($city=="РўР±РёР»РёСЃРё")  { $myrow['north']=41.41;  $myrow['east']=44.51;  $myrow['gmt']=+4; }
+if ($city=="Р¦С…РёРЅРІР°Р»")  { $myrow['north']=42.14;  $myrow['east']=43.57;  $myrow['gmt']=+3; }
+if ($city=="Р‘Р°С‚СѓРјРё")  { $myrow['north']=41.38;  $myrow['east']=41.40;  $myrow['gmt']=+3; }
+if ($city=="РЎСѓС…СѓРјРё")  { $myrow['north']=43.00;  $myrow['east']=42.01;  $myrow['gmt']=+3; }
+if ($city=="Р•СЂРµРІР°РЅ")  { $myrow['north']=40.11;  $myrow['east']=44.32;  $myrow['gmt']=+4; }
+if ($city=="Р‘Р°РєСѓ")  { $myrow['north']=40.23;  $myrow['east']=49.52;  $myrow['gmt']=+4; }
+if ($city=="РђР»РјР°-РђС‚Р°")  { $myrow['north']=43.46;  $myrow['east']=76.56;  $myrow['gmt']=+6; }
+if ($city=="РўР°Р»РґС‹-РљСѓСЂРіР°РЅ")  { $myrow['north']=44.59;  $myrow['east']=78.20;  $myrow['gmt']=+6; }
+if ($city=="РЎРµРјРёРїР°Р»Р°С‚РёРЅСЃРє")  { $myrow['north']=50.27;  $myrow['east']=80.14;  $myrow['gmt']=+6; }
+if ($city=="РџР°РІР»РѕРґР°СЂ")  { $myrow['north']=52.17;  $myrow['east']=76.57;  $myrow['gmt']=+6; }
+if ($city=="РљР°РЅСЃРє")  { $myrow['north']=56.12;  $myrow['east']=95.42;  $myrow['gmt']=+7; }
+if ($city=="РљРѕРјСЃРѕРјРѕР»СЊСЃРє-РЅР°-РђРјСѓСЂРµ")  { $myrow['north']=50.33;  $myrow['east']=137.00;  $myrow['gmt']=+10; }
+if ($city=="РњР°РіРЅРёС‚РѕРіРѕСЂСЃРє")  { $myrow['north']=53.23;  $myrow['east']=59.02;  $myrow['gmt']=+5; }
+if ($city=="РќРµС„С‚РµСЋРіР°РЅСЃРє")  { $myrow['north']=61.06;  $myrow['east']=72.36;  $myrow['gmt']=+5; }
+if ($city=="РќРѕРІРѕСЂРѕСЃСЃРёР№СЃРє")  { $myrow['north']=44.43;  $myrow['east']=37.46;  $myrow['gmt']=+3; }
+if ($city=="РќРѕСЂРёР»СЊСЃРє")  { $myrow['north']=69.20;  $myrow['east']=88.13;  $myrow['gmt']=+7; }
 
 //require_once("config.php"); $select=mysql_query("SELECT * FROM geo WHERE city='$city'"); 
 //$myrow = mysql_fetch_array($select);
 $zonedop=$tzone=$myrow['gmt']+$leto; $tzone='+'.$tzone;
 $north=$myrow['north']; $east=$myrow['east']; 
 
- require( 'moonphase.inc.php' ); //подключаем расчетный модуль лунного календаря
+ require( 'moonphase.inc.php' ); //РїРѕРґРєР»СЋС‡Р°РµРј СЂР°СЃС‡РµС‚РЅС‹Р№ РјРѕРґСѓР»СЊ Р»СѓРЅРЅРѕРіРѕ РєР°Р»РµРЅРґР°СЂСЏ
 
-if ($myrow['east'] > 114) { $myrow['east']=114; }  // проправка с глюком долготы и широты (вылезло на Владивостоке)
-//if ($myrow['north'] < 48) { $myrow['east']=48; }  // проправка с глюком долготы и широты (вылезло на Владивостоке)
+if ($myrow['east'] > 114) { $myrow['east']=114; }  // РїСЂРѕРїСЂР°РІРєР° СЃ РіР»СЋРєРѕРј РґРѕР»РіРѕС‚С‹ Рё С€РёСЂРѕС‚С‹ (РІС‹Р»РµР·Р»Рѕ РЅР° Р’Р»Р°РґРёРІРѕСЃС‚РѕРєРµ)
+//if ($myrow['north'] < 48) { $myrow['east']=48; }  // РїСЂРѕРїСЂР°РІРєР° СЃ РіР»СЋРєРѕРј РґРѕР»РіРѕС‚С‹ Рё С€РёСЂРѕС‚С‹ (РІС‹Р»РµР·Р»Рѕ РЅР° Р’Р»Р°РґРёРІРѕСЃС‚РѕРєРµ)
 
  
  $moondata =  phase(strtotime($date . ' ' . $time . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop );
- $moondata2 = phase(strtotime($date . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //восход луны на 00:00:00
- $moondata3 = phase(strtotime($date2 . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //восход луны на сутки назад
- $moondata4 = phase(strtotime($date3 . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //восход луны на сутки вперед
+ $moondata2 = phase(strtotime($date . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //РІРѕСЃС…РѕРґ Р»СѓРЅС‹ РЅР° 00:00:00
+ $moondata3 = phase(strtotime($date2 . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //РІРѕСЃС…РѕРґ Р»СѓРЅС‹ РЅР° СЃСѓС‚РєРё РЅР°Р·Р°Рґ
+ $moondata4 = phase(strtotime($date3 . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //РІРѕСЃС…РѕРґ Р»СѓРЅС‹ РЅР° СЃСѓС‚РєРё РІРїРµСЂРµРґ
  //
- //определение начало нового лунного дня с учетом возраста луны
- $srday1=strtotime($date . ' ' . $time); //расчетное время введенное пользователем
+ //РѕРїСЂРµРґРµР»РµРЅРёРµ РЅР°С‡Р°Р»Рѕ РЅРѕРІРѕРіРѕ Р»СѓРЅРЅРѕРіРѕ РґРЅСЏ СЃ СѓС‡РµС‚РѕРј РІРѕР·СЂР°СЃС‚Р° Р»СѓРЅС‹
+ $srday1=strtotime($date . ' ' . $time); //СЂР°СЃС‡РµС‚РЅРѕРµ РІСЂРµРјСЏ РІРІРµРґРµРЅРЅРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
  
  $moonvoshod=$moondata2[9];
- $moonvoshod1=($moonvoshod - floor($moonvoshod))*60; //минуты
+ $moonvoshod1=($moonvoshod - floor($moonvoshod))*60; //РјРёРЅСѓС‚С‹
  $moonvoshod=floor($moonvoshod).':'.floor($moonvoshod1).':00';
- $srday2=strtotime($date . ' ' . $moonvoshod . ' ' . $tzone); //расчетное время восхода луны на 00:00:00
+ $srday2=strtotime($date . ' ' . $moonvoshod . ' ' . $tzone); //СЂР°СЃС‡РµС‚РЅРѕРµ РІСЂРµРјСЏ РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ РЅР° 00:00:00
  $moonvoshodstar=$moondata3[9];
- $moonvoshodstar1=($moonvoshodstar - floor($moonvoshodstar))*60; //минуты
+ $moonvoshodstar1=($moonvoshodstar - floor($moonvoshodstar))*60; //РјРёРЅСѓС‚С‹
  $moonvoshodstar=floor($moonvoshodstar).':'.floor($moonvoshodstar1).':00';
- $srday3=strtotime($date2 . ' ' . $moonvoshodstar . ' ' . $tzone); //расчетное время восхода луны вчера (сутки назад)
+ $srday3=strtotime($date2 . ' ' . $moonvoshodstar . ' ' . $tzone); //СЂР°СЃС‡РµС‚РЅРѕРµ РІСЂРµРјСЏ РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ РІС‡РµСЂР° (СЃСѓС‚РєРё РЅР°Р·Р°Рґ)
  $moonvoshodstarzav=$moondata4[9];
- $moonvoshodstarzav1=($moonvoshodstarzav - floor($moonvoshodstarzav))*60; //минуты
+ $moonvoshodstarzav1=($moonvoshodstarzav - floor($moonvoshodstarzav))*60; //РјРёРЅСѓС‚С‹
  $moonvoshodstarzav=floor($moonvoshodstarzav).':'.floor($moonvoshodstarzav1).':00';
- $srday4=strtotime($date3 . ' ' . $moonvoshodstarzav . ' ' . $tzone); //расчетное время восхода луны завтра (сутки вперед)
+ $srday4=strtotime($date3 . ' ' . $moonvoshodstarzav . ' ' . $tzone); //СЂР°СЃС‡РµС‚РЅРѕРµ РІСЂРµРјСЏ РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ Р·Р°РІС‚СЂР° (СЃСѓС‚РєРё РІРїРµСЂРµРґ)
  
- $moonvozrast=ceil($moondata[2]); // возраст пользовательский
- $moonvozrast2=ceil($moondata3[2]); // возраст сутки назад
+ $moonvozrast=ceil($moondata[2]); // РІРѕР·СЂР°СЃС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёР№
+ $moonvozrast2=ceil($moondata3[2]); // РІРѕР·СЂР°СЃС‚ СЃСѓС‚РєРё РЅР°Р·Р°Рґ
   
  $moontime=$moondata[2];
  $moonages=degtime3($moontime);
  $prosc=degtime4($myrow['north']);
- //видимость луны в %
+ //РІРёРґРёРјРѕСЃС‚СЊ Р»СѓРЅС‹ РІ %
  $ppphaser=round($moondata[1] , 3) * 100;
- $ppphase=$ppphaser.'%'; //видимость луны
- $distanc= floor($moondata[3]);  $distanc= $distanc.' км'; // Дистанция
+ $ppphase=$ppphaser.'%'; //РІРёРґРёРјРѕСЃС‚СЊ Р»СѓРЅС‹
+ $distanc= floor($moondata[3]);  $distanc= $distanc.' РєРј'; // Р”РёСЃС‚Р°РЅС†РёСЏ
 
 //
-// расчет лунных фаз  
+// СЂР°СЃС‡РµС‚ Р»СѓРЅРЅС‹С… С„Р°Р·  
 	$gmt=$tzone*3600;
    	$phases  = array();
-	$phases  = phasehunt(strtotime($date  . ' ' . $time)) ; // фаза сейчас
-	$phases2 = phasehunt(strtotime($date2 . ' ' . $time)) ; // фаза сутки назад
-	$phases3 = phasehunt(strtotime($date3 . ' ' . $time)) ; // фаза сутки вперед
+	$phases  = phasehunt(strtotime($date  . ' ' . $time)) ; // С„Р°Р·Р° СЃРµР№С‡Р°СЃ
+	$phases2 = phasehunt(strtotime($date2 . ' ' . $time)) ; // С„Р°Р·Р° СЃСѓС‚РєРё РЅР°Р·Р°Рґ
+	$phases3 = phasehunt(strtotime($date3 . ' ' . $time)) ; // С„Р°Р·Р° СЃСѓС‚РєРё РІРїРµСЂРµРґ
 	$phases[0]+=$gmt; $phases[1]+=$gmt; $phases[2]+=$gmt; $phases[3]+=$gmt; $phases[4]+=$gmt; $moonstar=0; $moonstar+=$gmt;
 	$phases2[0]+=$gmt; $phases2[1]+=$gmt; $phases2[2]+=$gmt; $phases2[3]+=$gmt; $phases2[4]+=$gmt;
 	$phases3[0]+=$gmt; $phases3[1]+=$gmt; $phases3[2]+=$gmt; $phases3[3]+=$gmt; $phases3[4]+=$gmt;
 	
 	$srday2+=$gmt;  $srday3+=$gmt;  $srday4+=$gmt;
-	//Коректировка даты GMT юникс формат
-	$phasesgmt0=gmdate("j F Y l G:i", $phases2[0]); $phasesgmt0=strtotime($phasesgmt0); //новолуние 1 четверть сутки назад
-	$phasesgmt1=gmdate("j F Y l G:i", $phases2[1]); $phasesgmt1=strtotime($phasesgmt1); // 2 четверть сутки назад
-	$phasesgmt2=gmdate("j F Y l G:i", $phases2[2]); $phasesgmt2=strtotime($phasesgmt2); // Полнолуние 3 четверть сутки назад
-	$phasesgmt3=gmdate("j F Y l G:i", $phases2[3]); $phasesgmt3=strtotime($phasesgmt3); // четвертая четверть сутки назад
-	$phasesgmt4=gmdate("j F Y l G:i", $phases2[4]); $phasesgmt4=strtotime($phasesgmt4); // новолуние
-	$phasesgmt5=gmdate("j F Y l G:i", $phases[0]); $phasesgmt5=strtotime($phasesgmt5); // новолуние 1 четверть 
-	$phasesgmt6=gmdate("j F Y l G:i", $phases3[0]); $phasesgmt6=strtotime($phasesgmt6); // новолуние 1 четверть сутки вперед
+	//РљРѕСЂРµРєС‚РёСЂРѕРІРєР° РґР°С‚С‹ GMT СЋРЅРёРєСЃ С„РѕСЂРјР°С‚
+	$phasesgmt0=gmdate("j F Y l G:i", $phases2[0]); $phasesgmt0=strtotime($phasesgmt0); //РЅРѕРІРѕР»СѓРЅРёРµ 1 С‡РµС‚РІРµСЂС‚СЊ СЃСѓС‚РєРё РЅР°Р·Р°Рґ
+	$phasesgmt1=gmdate("j F Y l G:i", $phases2[1]); $phasesgmt1=strtotime($phasesgmt1); // 2 С‡РµС‚РІРµСЂС‚СЊ СЃСѓС‚РєРё РЅР°Р·Р°Рґ
+	$phasesgmt2=gmdate("j F Y l G:i", $phases2[2]); $phasesgmt2=strtotime($phasesgmt2); // РџРѕР»РЅРѕР»СѓРЅРёРµ 3 С‡РµС‚РІРµСЂС‚СЊ СЃСѓС‚РєРё РЅР°Р·Р°Рґ
+	$phasesgmt3=gmdate("j F Y l G:i", $phases2[3]); $phasesgmt3=strtotime($phasesgmt3); // С‡РµС‚РІРµСЂС‚Р°СЏ С‡РµС‚РІРµСЂС‚СЊ СЃСѓС‚РєРё РЅР°Р·Р°Рґ
+	$phasesgmt4=gmdate("j F Y l G:i", $phases2[4]); $phasesgmt4=strtotime($phasesgmt4); // РЅРѕРІРѕР»СѓРЅРёРµ
+	$phasesgmt5=gmdate("j F Y l G:i", $phases[0]); $phasesgmt5=strtotime($phasesgmt5); // РЅРѕРІРѕР»СѓРЅРёРµ 1 С‡РµС‚РІРµСЂС‚СЊ 
+	$phasesgmt6=gmdate("j F Y l G:i", $phases3[0]); $phasesgmt6=strtotime($phasesgmt6); // РЅРѕРІРѕР»СѓРЅРёРµ 1 С‡РµС‚РІРµСЂС‚СЊ СЃСѓС‚РєРё РІРїРµСЂРµРґ
 	
-	$phasesgmt7=gmdate("j F Y l G:i", $phases[0]); $phasesgmt7=strtotime($phasesgmt7); //новолуние 1 четверть 
-	$phasesgmt8=gmdate("j F Y l G:i", $phases[1]); $phasesgmt8=strtotime($phasesgmt8); // 2 четверть
-	$phasesgmt9=gmdate("j F Y l G:i", $phases[2]); $phasesgmt9=strtotime($phasesgmt9); // Полнолуние 3 четверть 
-	$phasesgmt10=gmdate("j F Y l G:i", $phases[3]); $phasesgmt10=strtotime($phasesgmt10); // четвертая четверть 
-	$phasesgmt11=gmdate("j F Y l G:i", $phases[4]); $phasesgmt11=strtotime($phasesgmt11); // новолуние
+	$phasesgmt7=gmdate("j F Y l G:i", $phases[0]); $phasesgmt7=strtotime($phasesgmt7); //РЅРѕРІРѕР»СѓРЅРёРµ 1 С‡РµС‚РІРµСЂС‚СЊ 
+	$phasesgmt8=gmdate("j F Y l G:i", $phases[1]); $phasesgmt8=strtotime($phasesgmt8); // 2 С‡РµС‚РІРµСЂС‚СЊ
+	$phasesgmt9=gmdate("j F Y l G:i", $phases[2]); $phasesgmt9=strtotime($phasesgmt9); // РџРѕР»РЅРѕР»СѓРЅРёРµ 3 С‡РµС‚РІРµСЂС‚СЊ 
+	$phasesgmt10=gmdate("j F Y l G:i", $phases[3]); $phasesgmt10=strtotime($phasesgmt10); // С‡РµС‚РІРµСЂС‚Р°СЏ С‡РµС‚РІРµСЂС‚СЊ 
+	$phasesgmt11=gmdate("j F Y l G:i", $phases[4]); $phasesgmt11=strtotime($phasesgmt11); // РЅРѕРІРѕР»СѓРЅРёРµ
 	
 	
 	
@@ -227,49 +227,49 @@ if ($myrow['east'] > 114) { $myrow['east']=114; }  // проправка с глюком долготы
 	//
 	//
 	//
-	// //определения восхода луны в новолуние $phases[4]
+	// //РѕРїСЂРµРґРµР»РµРЅРёСЏ РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ РІ РЅРѕРІРѕР»СѓРЅРёРµ $phases[4]
 		
 	if ($phasesgmt7>$srday1) { $dataper=$dataper2=$phasesgmt0; } 
-	else { $dataper=$dataper2=$phasesgmt7;  } //Отсчет 1лунного дня
+	else { $dataper=$dataper2=$phasesgmt7;  } //РћС‚СЃС‡РµС‚ 1Р»СѓРЅРЅРѕРіРѕ РґРЅСЏ
 	
 //	$date4=date("Y-m-d", $dataper2);
 //	$moondata5 = phase(strtotime($date4 . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop );
 //	$mmdd=$moondata5[9];
-//	$mmdd1=($mmdd - floor($mmdd))*60; //минуты
+//	$mmdd1=($mmdd - floor($mmdd))*60; //РјРёРЅСѓС‚С‹
 //   $mmdd=floor($mmdd).':'.floor($mmdd1).':00';
-//	$srday5=strtotime($date4 . ' ' . $mmdd . ' ' . $tzone); //восход луны в новолунье
+//	$srday5=strtotime($date4 . ' ' . $mmdd . ' ' . $tzone); //РІРѕСЃС…РѕРґ Р»СѓРЅС‹ РІ РЅРѕРІРѕР»СѓРЅСЊРµ
 		
-	//$moonper3=strtotime($dataper .' ' . $time); //дата польз. юникс	 
-	$moonper3=$dataper; //дата новолуния
+	//$moonper3=strtotime($dataper .' ' . $time); //РґР°С‚Р° РїРѕР»СЊР·. СЋРЅРёРєСЃ	 
+	$moonper3=$dataper; //РґР°С‚Р° РЅРѕРІРѕР»СѓРЅРёСЏ
 	$dataperxxx=$dataper;
 //
 //	
-// Расчет восхода луны в новолуния
-$newmoonarg=$moonper31=$dataper1=$moonper3; //начало новолуния
+// Р Р°СЃС‡РµС‚ РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ РІ РЅРѕРІРѕР»СѓРЅРёСЏ
+$newmoonarg=$moonper31=$dataper1=$moonper3; //РЅР°С‡Р°Р»Рѕ РЅРѕРІРѕР»СѓРЅРёСЏ
 $newmoonarg=date("Y-m-d" , $newmoonarg);
 $moonarg=0;
-$moonarg2 = phase(strtotime($newmoonarg . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //дата на 00:00:00
-$moonargvoshod=strtotime($newmoonarg . ' ' . $moonarg2[7]); //восход луны в день новолуния в линукс дате
+$moonarg2 = phase(strtotime($newmoonarg . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //РґР°С‚Р° РЅР° 00:00:00
+$moonargvoshod=strtotime($newmoonarg . ' ' . $moonarg2[7]); //РІРѕСЃС…РѕРґ Р»СѓРЅС‹ РІ РґРµРЅСЊ РЅРѕРІРѕР»СѓРЅРёСЏ РІ Р»РёРЅСѓРєСЃ РґР°С‚Рµ
 
 
-//Расчет лунного дня
+//Р Р°СЃС‡РµС‚ Р»СѓРЅРЅРѕРіРѕ РґРЅСЏ
 $moonday=0;	
 					
 //if ($moonargvoshod > $dataper2) $moonday=-1;
 $dataper=date("Y-m-d" , $dataper);     ///
 $dateuser=date("Y-m-d" , $srday1);    ///
-$moonper3=strtotime($dataper . ' ' . $time2); //линукс дата на день новолуния в 00:00 для счетчика
-$moonper4=strtotime($dateuser . ' ' . $time2); //линукс дата на день пользователя в 00:00 для счетчика
+$moonper3=strtotime($dataper . ' ' . $time2); //Р»РёРЅСѓРєСЃ РґР°С‚Р° РЅР° РґРµРЅСЊ РЅРѕРІРѕР»СѓРЅРёСЏ РІ 00:00 РґР»СЏ СЃС‡РµС‚С‡РёРєР°
+$moonper4=strtotime($dateuser . ' ' . $time2); //Р»РёРЅСѓРєСЃ РґР°С‚Р° РЅР° РґРµРЅСЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ 00:00 РґР»СЏ СЃС‡РµС‚С‡РёРєР°
 
 	 while ($moonper3 < $moonper4)	
 	 {  $moonper3=$moonper3 + 24*3600;	
 	   	$moonday+=1; 
-		//echo "Счетчик+1<br>";
+		//echo "РЎС‡РµС‚С‡РёРє+1<br>";
 		   }
 		  		   
 		 //
 		//
-		// для расчета паралакса 
+		// РґР»СЏ СЂР°СЃС‡РµС‚Р° РїР°СЂР°Р»Р°РєСЃР° 
 		while ($dataperxxx < $srday1)   
 	    {
 
@@ -278,13 +278,13 @@ $moonper4=strtotime($dateuser . ' ' . $time2); //линукс дата на день пользовател
 
 $dataperxxx_kostyl=date("Y-m-d" , $dataperxxx);
 		
-		$moondata5 = phase(strtotime($dataperxxx_kostyl . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //дата на 00:00:00  // нужно для расчета паралакса
-		  $moonper2=strtotime($moondata5[7]); //дата восхода луны юникс
+		$moondata5 = phase(strtotime($dataperxxx_kostyl . ' ' . $time2 . ' ' . $tzone), $myrow['north'], $myrow['east'], $zonedop ); //РґР°С‚Р° РЅР° 00:00:00  // РЅСѓР¶РЅРѕ РґР»СЏ СЂР°СЃС‡РµС‚Р° РїР°СЂР°Р»Р°РєСЃР°
+		  $moonper2=strtotime($moondata5[7]); //РґР°С‚Р° РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ СЋРЅРёРєСЃ
 		  
 		  $moonper2xxx=date("Y-m-d" , $moonper2);
 		  $moonper2xxx2='01:28:00';
 		  $moonper2_2=strtotime($moonper2xxx . ' ' . $moonper2xxx2);
-		  if ( $moonper2 < $moonper2_2 ) {$xpara=+1; }  // echo "<br>1раз должен сработать<br>";
+		  if ( $moonper2 < $moonper2_2 ) {$xpara=+1; }  // echo "<br>1СЂР°Р· РґРѕР»Р¶РµРЅ СЃСЂР°Р±РѕС‚Р°С‚СЊ<br>";
 
 //		  $dataperxxx=strtotime($dataperxxx) + 24*3600;
 		  $dataperxxx=$dataperxxx + 24*3600;
@@ -292,13 +292,13 @@ $dataperxxx_kostyl=date("Y-m-d" , $dataperxxx);
 }
 		//
 		//
-		//moonargvoshod - //восход луны в день новолуния в линукс дате
-		//dataper2 - // дата новолуния в линукс
+		//moonargvoshod - //РІРѕСЃС…РѕРґ Р»СѓРЅС‹ РІ РґРµРЅСЊ РЅРѕРІРѕР»СѓРЅРёСЏ РІ Р»РёРЅСѓРєСЃ РґР°С‚Рµ
+		//dataper2 - // РґР°С‚Р° РЅРѕРІРѕР»СѓРЅРёСЏ РІ Р»РёРЅСѓРєСЃ
 		//$xs1=date("Y-m-d G:i" , $moonargvoshod);
-		////srday1-расчетное время введенное пользователем
-		////srday2-расчетное время восхода луны на 00:00:00
+		////srday1-СЂР°СЃС‡РµС‚РЅРѕРµ РІСЂРµРјСЏ РІРІРµРґРµРЅРЅРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
+		////srday2-СЂР°СЃС‡РµС‚РЅРѕРµ РІСЂРµРјСЏ РІРѕСЃС…РѕРґР° Р»СѓРЅС‹ РЅР° 00:00:00
 
-//Баг Погрешности восхода Луны в новолуния на 19 июля 2012
+//Р‘Р°Рі РџРѕРіСЂРµС€РЅРѕСЃС‚Рё РІРѕСЃС…РѕРґР° Р›СѓРЅС‹ РІ РЅРѕРІРѕР»СѓРЅРёСЏ РЅР° 19 РёСЋР»СЏ 2012
 $datavoscor1=strtotime('2012-07-19');
 $datavoscor2=strtotime('2012-08-17 08:00');
 if (($srday1>$datavoscor1) and ($srday1<$datavoscor2)) { 
@@ -308,7 +308,7 @@ if (($srday1>$datavoscor1) and ($srday1<$datavoscor2)) {
 													 }
  
 	   
-// условия учитывает короткий 1-й день		   
+// СѓСЃР»РѕРІРёСЏ СѓС‡РёС‚С‹РІР°РµС‚ РєРѕСЂРѕС‚РєРёР№ 1-Р№ РґРµРЅСЊ		   
 if (($moonday!=0) and ($moonargvoshod>$dataper2)) {$moonday+=1; } 
 if (($moonday==0) and ($moonargvoshod>$dataper2) and ($srday1>$srday2)) {$moonday+=1;  }
 if (($moonday==0) and ($moonargvoshod>$dataper2) and ($srday1<$srday2)) {$moonday+=1;   }
@@ -319,20 +319,20 @@ if ($srday1>$srday2) {$moonday+=1;  }
 
 //
 //
-//Условия паралакса
+//РЈСЃР»РѕРІРёСЏ РїР°СЂР°Р»Р°РєСЃР°
 if (isset ($xpara) and ($xpara==1)) { $moonday-=1; 
-//echo "паралакс"; 
+//echo "РїР°СЂР°Р»Р°РєСЃ"; 
 					}
-if ($moonday==31)   {$moonday-=1;} //на всякий случай
-if ($moonday==32)   {$moonday-=2;} //на всякий случай
-if ($moonday==0)   {$moonday+=1;} //на всякий случай
+if ($moonday==31)   {$moonday-=1;} //РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№
+if ($moonday==32)   {$moonday-=2;} //РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№
+if ($moonday==0)   {$moonday+=1;} //РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№
 //
 //
 
 	//
-	// Поправка moonstar с какого периода идет лунный день, 
+	// РџРѕРїСЂР°РІРєР° moonstar СЃ РєР°РєРѕРіРѕ РїРµСЂРёРѕРґР° РёРґРµС‚ Р»СѓРЅРЅС‹Р№ РґРµРЅСЊ, 
 	//
-	if ($moonday==1) { $moonstar=$phasesgmt7; }  // поправка первого лунного дня
+	if ($moonday==1) { $moonstar=$phasesgmt7; }  // РїРѕРїСЂР°РІРєР° РїРµСЂРІРѕРіРѕ Р»СѓРЅРЅРѕРіРѕ РґРЅСЏ
 	else { 
 		$petia = strtotime($date . ' ' . $time );
 		if ($srday2 > $petia) { $moonstar=$srday3; } else { $moonstar=$srday2; }
@@ -340,13 +340,13 @@ if ($moonday==0)   {$moonday+=1;} //на всякий случай
 	
 		
 			
-	if (($srday1 > $phasesgmt0) && ($srday1 < $phasesgmt1) ) { $moonstar2=$phases2[0]; $faza[0]="Растущая  1-я четверть"; }
-	if (($srday1 > $phasesgmt1) && ($srday1 < $phasesgmt2) ) { $moonstar2=$phases2[1]; $faza[0]="Растущая  2-я четверть"; }
-	if (($srday1 > $phasesgmt2) && ($srday1 < $phasesgmt3) ) { $moonstar2=$phases2[2]; $faza[0]="Убывающая 3-я четверть"; }
-	if (($srday1 > $phasesgmt3) && ($srday1 < $phasesgmt4) ) { $moonstar2=$phases2[3]; $faza[0]="Убывающая 4-я четверть"; }
-	if (($srday1 > $phasesgmt4) && ($moonvozrast==1) && ($srday1 < $phasesgmtnew)) { $moonstar2=$phases2[4]; $faza[0]="Новолуние";}
-	if (($srday1 > $phasesgmt2) &&  ($srday1 < $phasesgmtfull)) { $moonstar2=$phases2[2]; $faza[0]="Полнолуние";}
-	if ($moonvozrast==2) { $moonstar2=$phases3[0]; $faza[0]="Растущая  1-я четверть"; }
+	if (($srday1 > $phasesgmt0) && ($srday1 < $phasesgmt1) ) { $moonstar2=$phases2[0]; $faza[0]="Р Р°СЃС‚СѓС‰Р°СЏ  1-СЏ С‡РµС‚РІРµСЂС‚СЊ"; }
+	if (($srday1 > $phasesgmt1) && ($srday1 < $phasesgmt2) ) { $moonstar2=$phases2[1]; $faza[0]="Р Р°СЃС‚СѓС‰Р°СЏ  2-СЏ С‡РµС‚РІРµСЂС‚СЊ"; }
+	if (($srday1 > $phasesgmt2) && ($srday1 < $phasesgmt3) ) { $moonstar2=$phases2[2]; $faza[0]="РЈР±С‹РІР°СЋС‰Р°СЏ 3-СЏ С‡РµС‚РІРµСЂС‚СЊ"; }
+	if (($srday1 > $phasesgmt3) && ($srday1 < $phasesgmt4) ) { $moonstar2=$phases2[3]; $faza[0]="РЈР±С‹РІР°СЋС‰Р°СЏ 4-СЏ С‡РµС‚РІРµСЂС‚СЊ"; }
+	if (($srday1 > $phasesgmt4) && ($moonvozrast==1) && ($srday1 < $phasesgmtnew)) { $moonstar2=$phases2[4]; $faza[0]="РќРѕРІРѕР»СѓРЅРёРµ";}
+	if (($srday1 > $phasesgmt2) &&  ($srday1 < $phasesgmtfull)) { $moonstar2=$phases2[2]; $faza[0]="РџРѕР»РЅРѕР»СѓРЅРёРµ";}
+	if ($moonvozrast==2) { $moonstar2=$phases3[0]; $faza[0]="Р Р°СЃС‚СѓС‰Р°СЏ  1-СЏ С‡РµС‚РІРµСЂС‚СЊ"; }
 	
 	$phasesrez1=gmdate("j F Y l G:i", $phases[0]);
 	$phasesrez2=gmdate("j F Y l G:i", $phases[1]);
@@ -356,7 +356,7 @@ if ($moonday==0)   {$moonday+=1;} //на всякий случай
 	
 	$moonstar = date("j F G:i", $moonstar);
 	$moonstar2 =  gmdate("j F G:i", $moonstar2);
-	$phasesgmt0 =  date("j F G:i", $phasesgmt0); // потом почистить
+	$phasesgmt0 =  date("j F G:i", $phasesgmt0); // РїРѕС‚РѕРј РїРѕС‡РёСЃС‚РёС‚СЊ
 	$srday4=  date("j F G:i", $srday4);
    
 
@@ -365,11 +365,11 @@ if ($moonday==0)   {$moonday+=1;} //на всякий случай
 	$phasesmas[8]="/September/"; $phasesmas[9]="/October/"; $phasesmas[10]="/November/"; $phasesmas[11]="/December/";
 	$phasesmas[12]="/Monday/"; $phasesmas[13]="/Tuesday/"; $phasesmas[14]="/Wednesday/"; $phasesmas[15]="/Thursday/";
 	$phasesmas[16]="/Friday/"; $phasesmas[17]="/Saturday/"; $phasesmas[18]="/Sunday/";
-	$phasesmas2[0]="Января"; $phasesmas2[1]="Февраля"; $phasesmas2[2]="Марта"; $phasesmas2[3]="Апреля";
-	$phasesmas2[4]="Мая"; $phasesmas2[5]="Июня"; $phasesmas2[6]="Июля"; $phasesmas2[7]="Августа"; $phasesmas2[8]="Сентября";
-	$phasesmas2[9]="Октября"; $phasesmas2[10]="Ноября"; $phasesmas2[11]="Декабря";
-	$phasesmas2[12]="Понедельник"; $phasesmas2[13]="Вторник"; $phasesmas2[14]="Среда";
-	$phasesmas2[15]="Четверг"; $phasesmas2[16]="Пятница"; $phasesmas2[17]="Субота"; $phasesmas2[18]="Воскресенье";
+	$phasesmas2[0]="РЇРЅРІР°СЂСЏ"; $phasesmas2[1]="Р¤РµРІСЂР°Р»СЏ"; $phasesmas2[2]="РњР°СЂС‚Р°"; $phasesmas2[3]="РђРїСЂРµР»СЏ";
+	$phasesmas2[4]="РњР°СЏ"; $phasesmas2[5]="РСЋРЅСЏ"; $phasesmas2[6]="РСЋР»СЏ"; $phasesmas2[7]="РђРІРіСѓСЃС‚Р°"; $phasesmas2[8]="РЎРµРЅС‚СЏР±СЂСЏ";
+	$phasesmas2[9]="РћРєС‚СЏР±СЂСЏ"; $phasesmas2[10]="РќРѕСЏР±СЂСЏ"; $phasesmas2[11]="Р”РµРєР°Р±СЂСЏ";
+	$phasesmas2[12]="РџРѕРЅРµРґРµР»СЊРЅРёРє"; $phasesmas2[13]="Р’С‚РѕСЂРЅРёРє"; $phasesmas2[14]="РЎСЂРµРґР°";
+	$phasesmas2[15]="Р§РµС‚РІРµСЂРі"; $phasesmas2[16]="РџСЏС‚РЅРёС†Р°"; $phasesmas2[17]="РЎСѓР±РѕС‚Р°"; $phasesmas2[18]="Р’РѕСЃРєСЂРµСЃРµРЅСЊРµ";
 	
 	$phasesrez1 = preg_replace($phasesmas, $phasesmas2, $phasesrez1);
 	$phasesrez2 = preg_replace($phasesmas, $phasesmas2, $phasesrez2);
@@ -379,19 +379,19 @@ if ($moonday==0)   {$moonday+=1;} //на всякий случай
 	$phasesrez6 = preg_replace($phasesmas, $phasesmas2, $moonstar);
 	$phasesrez7 = preg_replace($phasesmas, $phasesmas2, $moonstar2);
 	
-	//В знаке зодиака
-	switch ($moondata[10]) {case '1' : $moonznk1="Овна"; break;}
-	switch ($moondata[10]) {case '2' : $moonznk1="Тельца"; break;}
-	switch ($moondata[10]) {case '3' : $moonznk1="Близнецов"; break;}
-	switch ($moondata[10]) {case '4' : $moonznk1="Рака"; break;}
-	switch ($moondata[10]) {case '5' : $moonznk1="Льва"; break;}
-	switch ($moondata[10]) {case '6' : $moonznk1="Девы"; break;}
-	switch ($moondata[10]) {case '7' : $moonznk1="Весов"; break;}
-	switch ($moondata[10]) {case '8' : $moonznk1="Скорпиона"; break;}
-	switch ($moondata[10]) {case '9' : $moonznk1="Стрельца"; break;}
-	switch ($moondata[10]) {case '10': $moonznk1="Козерога"; break;}
-	switch ($moondata[10]) {case '11': $moonznk1="Водолея"; break;}
-	switch ($moondata[10]) {case '12': $moonznk1="Рыбы"; break;}
+	//Р’ Р·РЅР°РєРµ Р·РѕРґРёР°РєР°
+	switch ($moondata[10]) {case '1' : $moonznk1="РћРІРЅР°"; break;}
+	switch ($moondata[10]) {case '2' : $moonznk1="РўРµР»СЊС†Р°"; break;}
+	switch ($moondata[10]) {case '3' : $moonznk1="Р‘Р»РёР·РЅРµС†РѕРІ"; break;}
+	switch ($moondata[10]) {case '4' : $moonznk1="Р Р°РєР°"; break;}
+	switch ($moondata[10]) {case '5' : $moonznk1="Р›СЊРІР°"; break;}
+	switch ($moondata[10]) {case '6' : $moonznk1="Р”РµРІС‹"; break;}
+	switch ($moondata[10]) {case '7' : $moonznk1="Р’РµСЃРѕРІ"; break;}
+	switch ($moondata[10]) {case '8' : $moonznk1="РЎРєРѕСЂРїРёРѕРЅР°"; break;}
+	switch ($moondata[10]) {case '9' : $moonznk1="РЎС‚СЂРµР»СЊС†Р°"; break;}
+	switch ($moondata[10]) {case '10': $moonznk1="РљРѕР·РµСЂРѕРіР°"; break;}
+	switch ($moondata[10]) {case '11': $moonznk1="Р’РѕРґРѕР»РµСЏ"; break;}
+	switch ($moondata[10]) {case '12': $moonznk1="Р С‹Р±С‹"; break;}
 	
 	$mvos = strtotime($moondata2[7]); $mvos=date("H:i", $mvos);
 	$mzak = strtotime($moondata2[8]); $mzak=date("H:i", $mzak);
@@ -415,21 +415,21 @@ if($mzak_min<$mzak_tom_min){$mzak="no";}
 //$myrow = mysql_fetch_array($select);
 
 $northarg=floor(($north-floor($north))*100);
-$north=floor($north).'° '.$northarg."'".'N';
+$north=floor($north).'В° '.$northarg."'".'N';
 $eastarg=floor(($east-floor($east))*100);
-$east=floor($east).'° '.$eastarg."'".'E';
-    switch ($mm) {case '1' : $mom="Января"; break;}
-	switch ($mm) {case '2' : $mom="Февраля"; break;}
-	switch ($mm) {case '3' : $mom="Марта"; break;}
-	switch ($mm) {case '4' : $mom="Апреля"; break;}
-	switch ($mm) {case '5' : $mom="Мая"; break;}
-	switch ($mm) {case '6' : $mom="Июня"; break;}
-	switch ($mm) {case '7' : $mom="Июля"; break;}
-	switch ($mm) {case '8' : $mom="Августа"; break;}
-	switch ($mm) {case '9' : $mom="Сентября"; break;}
-	switch ($mm) {case '10': $mom="Октября"; break;}
-	switch ($mm) {case '11': $mom="Ноября"; break;}
-	switch ($mm) {case '12': $mom="Декабря"; break;}
+$east=floor($east).'В° '.$eastarg."'".'E';
+    switch ($mm) {case '1' : $mom="РЇРЅРІР°СЂСЏ"; break;}
+	switch ($mm) {case '2' : $mom="Р¤РµРІСЂР°Р»СЏ"; break;}
+	switch ($mm) {case '3' : $mom="РњР°СЂС‚Р°"; break;}
+	switch ($mm) {case '4' : $mom="РђРїСЂРµР»СЏ"; break;}
+	switch ($mm) {case '5' : $mom="РњР°СЏ"; break;}
+	switch ($mm) {case '6' : $mom="РСЋРЅСЏ"; break;}
+	switch ($mm) {case '7' : $mom="РСЋР»СЏ"; break;}
+	switch ($mm) {case '8' : $mom="РђРІРіСѓСЃС‚Р°"; break;}
+	switch ($mm) {case '9' : $mom="РЎРµРЅС‚СЏР±СЂСЏ"; break;}
+	switch ($mm) {case '10': $mom="РћРєС‚СЏР±СЂСЏ"; break;}
+	switch ($mm) {case '11': $mom="РќРѕСЏР±СЂСЏ"; break;}
+	switch ($mm) {case '12': $mom="Р”РµРєР°Р±СЂСЏ"; break;}
 	$vrtime=date("H:i", $srday1);
 //require_once("config.php");
 //$sel=mysql_query("SELECT * FROM moonday WHERE id='$moonday' ");
@@ -437,12 +437,12 @@ $east=floor($east).'° '.$eastarg."'".'E';
 //$sel2=mysql_query("SELECT * FROM znak WHERE id='$moondata[10]' ");
 //$myr2 = mysql_fetch_array($sel2);
 
-if ($faza[0]=="Новолуние") { $idf=1; $idmoonfaze=1; }
-if ($faza[0]=="Растущая  1-я четверть") { $idf=2; $idmoonfaze=2; }
-if ($faza[0]=="Растущая  2-я четверть") { $idf=2; $idmoonfaze=3; }
-if ($faza[0]=="Полнолуние") { $idf=3;  $idmoonfaze=4; }
-if ($faza[0]=="Убывающая 3-я четверть") { $idf=4; $idmoonfaze=5; }
-if ($faza[0]=="Убывающая 4-я четверть") { $idf=4; $idmoonfaze=6; }
+if ($faza[0]=="РќРѕРІРѕР»СѓРЅРёРµ") { $idf=1; $idmoonfaze=1; }
+if ($faza[0]=="Р Р°СЃС‚СѓС‰Р°СЏ  1-СЏ С‡РµС‚РІРµСЂС‚СЊ") { $idf=2; $idmoonfaze=2; }
+if ($faza[0]=="Р Р°СЃС‚СѓС‰Р°СЏ  2-СЏ С‡РµС‚РІРµСЂС‚СЊ") { $idf=2; $idmoonfaze=3; }
+if ($faza[0]=="РџРѕР»РЅРѕР»СѓРЅРёРµ") { $idf=3;  $idmoonfaze=4; }
+if ($faza[0]=="РЈР±С‹РІР°СЋС‰Р°СЏ 3-СЏ С‡РµС‚РІРµСЂС‚СЊ") { $idf=4; $idmoonfaze=5; }
+if ($faza[0]=="РЈР±С‹РІР°СЋС‰Р°СЏ 4-СЏ С‡РµС‚РІРµСЂС‚СЊ") { $idf=4; $idmoonfaze=6; }
 
 //$sel3=mysql_query("SELECT * FROM faza WHERE id='$idf'");
 //$myr3 = mysql_fetch_array($sel3);
@@ -453,16 +453,3 @@ if ($faza[0]=="Убывающая 4-я четверть") { $idf=4; $idmoonfaze=6; }
 //
 //
 include ("form1.php"); 
-
-
-
-
-?>
-
-
-
-
-
-
-
-

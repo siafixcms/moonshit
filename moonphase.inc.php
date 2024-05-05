@@ -1,36 +1,36 @@
 <?php
-date_default_timezone_set('Europe/Moscow'); // ÷òîáû ó õîñòåðà îøèáêè íå ñûïàëèñü
+date_default_timezone_set('Europe/Moscow'); // Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñƒ Ñ…Ð¾ÑÑ‚ÐµÑ€Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸ Ð½Ðµ ÑÑ‹Ð¿Ð°Ð»Ð¸ÑÑŒ
 
 //require_once("config.php"); $select=mysql_query("SELECT * FROM geo WHERE city='$city'"); 
 //$myrow = mysql_fetch_array($select);
 
- // Îøèáî÷íûå îïðåäåëåíèÿ
+ // ÐžÑˆÐ¸Ð±Ð¾Ñ‡Ð½Ñ‹Ðµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ñ
  define( 'ERR_UNDEF',	-1 );
 
- // Àñòðîíîìè÷åñêèå êîíñòàíòû
- define( 'EPOCH',	2444238.5 );	// 1980 ßíâàðü 0.0
+ // ÐÑÑ‚Ñ€Ð¾Ð½Ð¾Ð¼Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ ÐºÐ¾Ð½ÑÑ‚Ð°Ð½Ñ‚Ñ‹
+ define( 'EPOCH',	2444238.5 );	// 1980 Ð¯Ð½Ð²Ð°Ñ€ÑŒ 0.0
 
 
-// Êîíñòàíòû, îïðåäåëÿþùèå î÷åâèäíóþ îðáèòó Ñîëíöà
- define( 'ELONGE',	278.833540 );	// ecliptic longitude of the Sun at epoch 1980.0 //ýêëèïòè÷åñêàÿ äîëãîòà Ñîëíöà ñ 1980.0
+// ÐšÐ¾Ð½ÑÑ‚Ð°Ð½Ñ‚Ñ‹, Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð¸Ðµ Ð¾Ñ‡ÐµÐ²Ð¸Ð´Ð½ÑƒÑŽ Ð¾Ñ€Ð±Ð¸Ñ‚Ñƒ Ð¡Ð¾Ð»Ð½Ñ†Ð°
+ define( 'ELONGE',	278.833540 );	// ecliptic longitude of the Sun at epoch 1980.0 //ÑÐºÐ»Ð¸Ð¿Ñ‚Ð¸Ñ‡ÐµÑÐºÐ°Ñ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð° Ð¡Ð¾Ð»Ð½Ñ†Ð° Ñ 1980.0
  define( 'ELONGP',	282.596403 );	// ecliptic longitude of the Sun at perigee
  define( 'ECCENT',	0.016718 );	    // eccentricity of Earth's orbit
  define( 'SUNSMAX',	1.495985e8 );	// semi-major axis of Earth's orbit, km
  define( 'SUNANGSIZ',	0.533128 );	// sun's angular size, degrees, at semi-major axis distance
 
- // Ýëåìåíòû îðáèòû Ëóíû, ýïîõà 1980.0
+ // Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¾Ñ€Ð±Ð¸Ñ‚Ñ‹ Ð›ÑƒÐ½Ñ‹, ÑÐ¿Ð¾Ñ…Ð° 1980.0
  define( 'MMLONG',	64.975464 );	// moon's mean longitude at the epoch
  define( 'MMLONGP',	349.383063 );	// mean longitude of the perigee at the epoch
  define( 'MLNODE',	151.950429 );	// mean longitude of the node at the epoch
- define( 'MINC',	5.145396 );	// inclination of the Moon's orbit//ñêëîíåíèå îðáèòû Ëóíû
+ define( 'MINC',	5.145396 );	// inclination of the Moon's orbit//ÑÐºÐ»Ð¾Ð½ÐµÐ½Ð¸Ðµ Ð¾Ñ€Ð±Ð¸Ñ‚Ñ‹ Ð›ÑƒÐ½Ñ‹
  define( 'MECC',	0.054900 );	// eccentricity of the Moon's orbit
  define( 'MANGSIZ',	0.5181 );	// moon's angular size at distance a from Earth
  define( 'MSMAX',	384401.0 );	// semi-major axis of Moon's orbit in km
  define( 'MPARALLAX',	0.9507 );	// parallax at distance a from Earth
- define( 'SYNMONTH',	29.53058868 );	// synodic month (new Moon to new Moon) ////ëóííûé ìåñÿö(ñ íîâàé Ëóíû/äî íîâîé Ëóíû)
+ define( 'SYNMONTH',	29.53058868 );	// synodic month (new Moon to new Moon) ////Ð»ÑƒÐ½Ð½Ñ‹Ð¹ Ð¼ÐµÑÑÑ†(Ñ Ð½Ð¾Ð²Ð°Ð¹ Ð›ÑƒÐ½Ñ‹/Ð´Ð¾ Ð½Ð¾Ð²Ð¾Ð¹ Ð›ÑƒÐ½Ñ‹)
 
 
-//Ïåðåõîä îò ýêëèï÷åñêèõ êîîðäèíàò ê ýêâàòîðèàëüíûì
+//ÐŸÐµÑ€ÐµÑ…Ð¾Ð´ Ð¾Ñ‚ ÑÐºÐ»Ð¸Ð¿Ñ‡ÐµÑÐºÐ¸Ñ… ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ðº ÑÐºÐ²Ð°Ñ‚Ð¾Ñ€Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ð¼
  function ebeta ($argbeta, $argliamba) {
 $Ei=23.441884;
 $sinBeta=(sin(torad($argbeta))*cos(torad($Ei)))+(cos(torad($argbeta))*sin(torad($Ei))*sin(torad($argliamba)));
@@ -55,40 +55,40 @@ if ($arg < 0) $arg=$arg+24;
 return ($arg); }
 
 function degtime ($arg) {  
-$arg1=$arg*60; //÷àñû, ãðàäóñû
-$arg2=($arg1 - floor($arg1))*60; //ìèíóòû
-$arg3=($arg2 - floor($arg2))*60; //ñåêóíäû
-$arg=floor($arg1).'°'.floor($arg2)."'".floor($arg3).'"';
+$arg1=$arg*60; //Ñ‡Ð°ÑÑ‹, Ð³Ñ€Ð°Ð´ÑƒÑÑ‹
+$arg2=($arg1 - floor($arg1))*60; //Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹
+$arg3=($arg2 - floor($arg2))*60; //ÑÐµÐºÑƒÐ½Ð´Ñ‹
+$arg=floor($arg1).'Â°'.floor($arg2)."'".floor($arg3).'"';
 return ($arg);  }
 
 function degtimeg ($arg) {  
-$arg1=$arg; //÷àñû, ãðàäóñû
-$arg2=($arg1 - floor($arg1))*60; //ìèíóòû
-$arg3=($arg2 - floor($arg2))*60; //ñåêóíäû
-$arg=floor($arg1).'°'.floor($arg2)."'".floor($arg3).'"';
+$arg1=$arg; //Ñ‡Ð°ÑÑ‹, Ð³Ñ€Ð°Ð´ÑƒÑÑ‹
+$arg2=($arg1 - floor($arg1))*60; //Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹
+$arg3=($arg2 - floor($arg2))*60; //ÑÐµÐºÑƒÐ½Ð´Ñ‹
+$arg=floor($arg1).'Â°'.floor($arg2)."'".floor($arg3).'"';
 return ($arg);  }
 
 function degtime2 ($arg) {  
 //if($arg < 0) $arg=$arg * (-);
-$arg1=$arg; //÷àñû, ãðàäóñû
-$arg2=($arg1 - floor($arg1))*60; //ìèíóòû
-$arg3=($arg2 - floor($arg2))*60; //ñåêóíäû
+$arg1=$arg; //Ñ‡Ð°ÑÑ‹, Ð³Ñ€Ð°Ð´ÑƒÑÑ‹
+$arg2=($arg1 - floor($arg1))*60; //Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹
+$arg3=($arg2 - floor($arg2))*60; //ÑÐµÐºÑƒÐ½Ð´Ñ‹
 $arg=floor($arg1).':'.floor($arg2);
 return ($arg);  }
 
-function degtime3 ($arg) {  //÷èñëåííóþ äàòó ïåðåâîäèì â ÷àñîâóþ
+function degtime3 ($arg) {  //Ñ‡Ð¸ÑÐ»ÐµÐ½Ð½ÑƒÑŽ Ð´Ð°Ñ‚Ñƒ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ð¼ Ð² Ñ‡Ð°ÑÐ¾Ð²ÑƒÑŽ
 //if($arg < 0) $arg=$arg * (-);
-$arg1=$arg; //äíè
-$arg2=($arg1 - floor($arg1))*24; //÷àñû
-$arg3=($arg2 - floor($arg2))*60; //ìèíóòû
-$arg=floor($arg1).äí.' '.floor($arg2).÷.' '.floor($arg3).ì;
+$arg1=$arg; //Ð´Ð½Ð¸
+$arg2=($arg1 - floor($arg1))*24; //Ñ‡Ð°ÑÑ‹
+$arg3=($arg2 - floor($arg2))*60; //Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹
+$arg=floor($arg1).' '.floor($arg2).' '.floor($arg3);
 return ($arg);  }
 
-function degtime4 ($arg) {  //÷àñîâóþ ïåðåâîäèì â äåñÿòè÷íóþ
+function degtime4 ($arg) {  //Ñ‡Ð°ÑÐ¾Ð²ÑƒÑŽ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ð¼ Ð² Ð´ÐµÑÑÑ‚Ð¸Ñ‡Ð½ÑƒÑŽ
 //if($arg < 0) $arg=$arg * (-);
-$arg1=$arg; //ãðàäóñû
-$arg2=($arg1 - floor($arg1))/60*100; //ìèíóòû
-$arg3=$arg2 + floor($arg1); //äåñÿòè÷íûé ðåçóëüòàò
+$arg1=$arg; //Ð³Ñ€Ð°Ð´ÑƒÑÑ‹
+$arg2=($arg1 - floor($arg1))/60*100; //Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹
+$arg3=$arg2 + floor($arg1); //Ð´ÐµÑÑÑ‚Ð¸Ñ‡Ð½Ñ‹Ð¹ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚
 $arg=$arg3;
 return ($arg);  }
 
@@ -120,8 +120,8 @@ return ($arg);  }
 
  // jyear - convert Julian date to year, month, day, which are
  // returned via integer pointers to integers
- //jyear - êîíâåðòèðîâàííàÿ äàòà ê þëèàíñêîìó, ãîäó, ìåñÿöó, äíþ, êîòîðûå ÿâëÿþòñÿ
- //âîçâðàùåííûé ÷åðåç öåëî÷èñëåííûå óêàçàòåëè íà öåëûõ ÷èñëà
+ //jyear - ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ Ð´Ð°Ñ‚Ð° Ðº ÑŽÐ»Ð¸Ð°Ð½ÑÐºÐ¾Ð¼Ñƒ, Ð³Ð¾Ð´Ñƒ, Ð¼ÐµÑÑÑ†Ñƒ, Ð´Ð½ÑŽ, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ ÑÐ²Ð»ÑÑŽÑ‚ÑÑ
+ //Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰ÐµÐ½Ð½Ñ‹Ð¹ Ñ‡ÐµÑ€ÐµÐ· Ñ†ÐµÐ»Ð¾Ñ‡Ð¸ÑÐ»ÐµÐ½Ð½Ñ‹Ðµ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»Ð¸ Ð½Ð° Ñ†ÐµÐ»Ñ‹Ñ… Ñ‡Ð¸ÑÐ»Ð°
  function jyear ( $td, &$yy, &$mm, &$dd )  {
 	$td += 0.5;	// astronomical to civil.
 	$z = floor( $td );
@@ -155,13 +155,13 @@ return ($arg);  }
  //
  //                 where year is expressed as a year and fractional year.  
  
- //meanphase 	-   Âû÷èñëÿåò âðåìÿ íîâîé Ëóíû äëÿ êîíêðåòíîé äàòû
- //					îñíîâíàÿ äàòà. Ýòîò ïàðàìåòð K ê ýòîé ôóíêöèè
- //					ïðåäâàðèòåëüíî âû÷èñëåííûé synodic èíäåêñ ìåñÿöà, äàííûé:
+ //meanphase 	-   Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÑÐµÑ‚ Ð²Ñ€ÐµÐ¼Ñ Ð½Ð¾Ð²Ð¾Ð¹ Ð›ÑƒÐ½Ñ‹ Ð´Ð»Ñ ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ð¾Ð¹ Ð´Ð°Ñ‚Ñ‹
+ //					Ð¾ÑÐ½Ð¾Ð²Ð½Ð°Ñ Ð´Ð°Ñ‚Ð°. Ð­Ñ‚Ð¾Ñ‚ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ K Ðº ÑÑ‚Ð¾Ð¹ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸
+ //					Ð¿Ñ€ÐµÐ´Ð²Ð°Ñ€Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð²Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð½Ñ‹Ð¹ synodic Ð¸Ð½Ð´ÐµÐºÑ Ð¼ÐµÑÑÑ†Ð°, Ð´Ð°Ð½Ð½Ñ‹Ð¹:
  //
- //							K = (ãîä - 1900) * 12.3685
+ //							K = (Ð³Ð¾Ð´ - 1900) * 12.3685
  //
- //					ãäå ãîä âûðàæåí êàê ãîä è äðîáíûé ãîä.
+ //					Ð³Ð´Ðµ Ð³Ð¾Ð´ Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½ ÐºÐ°Ðº Ð³Ð¾Ð´ Ð¸ Ð´Ñ€Ð¾Ð±Ð½Ñ‹Ð¹ Ð³Ð¾Ð´.
  
  function meanphase ( $sdate, $k )  {
 
@@ -184,9 +184,9 @@ return ($arg);  }
  // new moon, and a phase selector (0.0, 0.25, 0.5, 0.75),
  // obtain the true, corrected phase time.
 
- //truephase - äàííûé êîýôôèöèåíò òåïëîïðîâîäíîñòè îïðåäåëÿåò ôàçó
- //íîâàÿ ëóíà, è ñåëåêòîð ôàçû (0.0, 0.25, 0.5, 0.75),
- //ïîëó÷èòå èñòèíó, èñïðàâëåííîå âðåìÿ ôàçû.
+ //truephase - Ð´Ð°Ð½Ð½Ñ‹Ð¹ ÐºÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ñ‚ÐµÐ¿Ð»Ð¾Ð¿Ñ€Ð¾Ð²Ð¾Ð´Ð½Ð¾ÑÑ‚Ð¸ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÑ‚ Ñ„Ð°Ð·Ñƒ
+ //Ð½Ð¾Ð²Ð°Ñ Ð»ÑƒÐ½Ð°, Ð¸ ÑÐµÐ»ÐµÐºÑ‚Ð¾Ñ€ Ñ„Ð°Ð·Ñ‹ (0.0, 0.25, 0.5, 0.75),
+ //Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚Ðµ Ð¸ÑÑ‚Ð¸Ð½Ñƒ, Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ Ñ„Ð°Ð·Ñ‹.
  
  function truephase ( $k, $phase )  {
 	$apcor = 0;
@@ -277,9 +277,9 @@ return ($arg);  }
  // date.  Five phases are found, starting and ending with the
  // new moons which bound the current lunation
  
- //phasehunt - íàõîäÿò âðåìÿ ôàç ëóíû, çàäàííîé
- //äàòû. Ïÿòü ôàç íàéäåíû, íà÷àëüíûå è êîíå÷íûå ñ
- //íîâûå ëóíû, êîòîðûå ñâÿçûâàëè òåêóùóþ ëóíàöèþ
+ //phasehunt - Ð½Ð°Ñ…Ð¾Ð´ÑÑ‚ Ð²Ñ€ÐµÐ¼Ñ Ñ„Ð°Ð· Ð»ÑƒÐ½Ñ‹, Ð·Ð°Ð´Ð°Ð½Ð½Ð¾Ð¹
+ //Ð´Ð°Ñ‚Ñ‹. ÐŸÑÑ‚ÑŒ Ñ„Ð°Ð· Ð½Ð°Ð¹Ð´ÐµÐ½Ñ‹, Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ñ‹Ðµ Ð¸ ÐºÐ¾Ð½ÐµÑ‡Ð½Ñ‹Ðµ Ñ
+ //Ð½Ð¾Ð²Ñ‹Ðµ Ð»ÑƒÐ½Ñ‹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ ÑÐ²ÑÐ·Ñ‹Ð²Ð°Ð»Ð¸ Ñ‚ÐµÐºÑƒÑ‰ÑƒÑŽ Ð»ÑƒÐ½Ð°Ñ†Ð¸ÑŽ
  
    //function phasehunt ( $time=-1 )  {
 	function phasehunt ( $time=0 )  {
@@ -317,8 +317,8 @@ return ($arg);  }
  // phaselist() - Find time of phases of the moon between two dates.
  // Times (in & out) are seconds_since_1970
 
- //phaselist () - Íàõîäÿò âðåìÿ ôàç ëóíû ìåæäó äâóìÿ äàòàìè.
- //Âðåìÿ(âõîäà & âûõîäà) â ñåêóíäàõ íà÷èíàÿ ñ seconds_since_1970
+ //phaselist () - ÐÐ°Ñ…Ð¾Ð´ÑÑ‚ Ð²Ñ€ÐµÐ¼Ñ Ñ„Ð°Ð· Ð»ÑƒÐ½Ñ‹ Ð¼ÐµÐ¶Ð´Ñƒ Ð´Ð²ÑƒÐ¼Ñ Ð´Ð°Ñ‚Ð°Ð¼Ð¸.
+ //Ð’Ñ€ÐµÐ¼Ñ(Ð²Ñ…Ð¾Ð´Ð° & Ð²Ñ‹Ñ…Ð¾Ð´Ð°) Ð² ÑÐµÐºÑƒÐ½Ð´Ð°Ñ… Ð½Ð°Ñ‡Ð¸Ð½Ð°Ñ Ñ seconds_since_1970
  
  function phaselist ( $sdate, $edate )  {
 	if ( empty($sdate) || empty($edate) )  {
@@ -354,7 +354,7 @@ return ($arg);  }
 
 
  // kepler() - solve the equation of Kepler
- //kepler () - ðåøàåì óðàâíåíèå Kepler-à
+ //kepler () - Ñ€ÐµÑˆÐ°ÐµÐ¼ ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ Kepler-Ð°
  
  function kepler ( $m, $ecc ) {
 	$EPSILON = 1e-6;
@@ -380,16 +380,16 @@ return ($arg);  }
  // angular diameter subtended by the Moon as seen by an observer
  // at the centre of the Earth.
  
- // phase() - âû÷èñëÿåò ôàçó ëóíû êàê ôðàêöèÿ:
+ // phase() - Ð²Ñ‹Ñ‡Ð¸ÑÐ»ÑÐµÑ‚ Ñ„Ð°Ð·Ñƒ Ð»ÑƒÐ½Ñ‹ ÐºÐ°Ðº Ñ„Ñ€Ð°ÐºÑ†Ð¸Ñ:
  //
- //Ïàðàìåòð - âðåìÿ, â òå÷åíèå êîòîðîãî ôàçó òðåáóþò,
- //âûðàæåííûé êàê Þëèàíñêàÿ äàòà è ôðàêöèÿ. Âîçâðàùàåò òåðìèíàòîð
- //óãîë ôàçû êàê ïðîöåíò îò ïîëíîãî êðóãà (òî åñòü, îò 0 äî 1),
- //è ïàìÿòü â ïàðàìåòðû óêàçàòåëÿ îñâåùåííàÿ ôðàêöèÿ
- //äèñê Ëóíû, âîçðàñò Ëóíû â äíÿõ è ôðàêöèè,
- //ðàññòîÿíèå Ëóíû îò öåíòðà Çåìëè, è
- //óãëîâîé äèàìåòð ïîäèìåë òåíäåíöèþ Ëóíîé êàê çàìå÷åíî íàáëþäàòåëåì
- //â öåíòðå Çåìëè.
+ //ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ - Ð²Ñ€ÐµÐ¼Ñ, Ð² Ñ‚ÐµÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ñ„Ð°Ð·Ñƒ Ñ‚Ñ€ÐµÐ±ÑƒÑŽÑ‚,
+ //Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ°Ðº Ð®Ð»Ð¸Ð°Ð½ÑÐºÐ°Ñ Ð´Ð°Ñ‚Ð° Ð¸ Ñ„Ñ€Ð°ÐºÑ†Ð¸Ñ. Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ‚ÐµÑ€Ð¼Ð¸Ð½Ð°Ñ‚Ð¾Ñ€
+ //ÑƒÐ³Ð¾Ð» Ñ„Ð°Ð·Ñ‹ ÐºÐ°Ðº Ð¿Ñ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¾Ñ‚ Ð¿Ð¾Ð»Ð½Ð¾Ð³Ð¾ ÐºÑ€ÑƒÐ³Ð° (Ñ‚Ð¾ ÐµÑÑ‚ÑŒ, Ð¾Ñ‚ 0 Ð´Ð¾ 1),
+ //Ð¸ Ð¿Ð°Ð¼ÑÑ‚ÑŒ Ð² Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»Ñ Ð¾ÑÐ²ÐµÑ‰ÐµÐ½Ð½Ð°Ñ Ñ„Ñ€Ð°ÐºÑ†Ð¸Ñ
+ //Ð´Ð¸ÑÐº Ð›ÑƒÐ½Ñ‹, Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð›ÑƒÐ½Ñ‹ Ð² Ð´Ð½ÑÑ… Ð¸ Ñ„Ñ€Ð°ÐºÑ†Ð¸Ð¸,
+ //Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð›ÑƒÐ½Ñ‹ Ð¾Ñ‚ Ñ†ÐµÐ½Ñ‚Ñ€Ð° Ð—ÐµÐ¼Ð»Ð¸, Ð¸
+ //ÑƒÐ³Ð»Ð¾Ð²Ð¾Ð¹ Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ Ð¿Ð¾Ð´Ð¸Ð¼ÐµÐ» Ñ‚ÐµÐ½Ð´ÐµÐ½Ñ†Ð¸ÑŽ Ð›ÑƒÐ½Ð¾Ð¹ ÐºÐ°Ðº Ð·Ð°Ð¼ÐµÑ‡ÐµÐ½Ð¾ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»ÐµÐ¼
+ //Ð² Ñ†ÐµÐ½Ñ‚Ñ€Ðµ Ð—ÐµÐ¼Ð»Ð¸.
  
  
  function phase ( $time=0, $Fi, $Dol, $gm )  {
@@ -413,9 +413,9 @@ return ($arg);  }
 //	   $mpfrac);
 
 	// Calculation of the Sun's position.
-	$Day = $pdate - EPOCH;						// date within epoch //äàòà ñ íà÷àëà þíèêñ 1970 ãîäà
-	$N = fixangle( (360 / 365.2422) * $Day );			// mean anomaly of the Sun //ðàññ÷èòûâàåì àíîìàëèþ ñîëíöà
-	$M = fixangle( $N + ELONGE - ELONGP );				// convert from perigee co-ordinates //êîíâåðòèðóåì äëÿ êîîðäèíàò ïåðèãåÿ
+	$Day = $pdate - EPOCH;						// date within epoch //Ð´Ð°Ñ‚Ð° Ñ Ð½Ð°Ñ‡Ð°Ð»Ð° ÑŽÐ½Ð¸ÐºÑ 1970 Ð³Ð¾Ð´Ð°
+	$N = fixangle( (360 / 365.2422) * $Day );			// mean anomaly of the Sun //Ñ€Ð°ÑÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ð°Ð½Ð¾Ð¼Ð°Ð»Ð¸ÑŽ ÑÐ¾Ð»Ð½Ñ†Ð°
+	$M = fixangle( $N + ELONGE - ELONGP );				// convert from perigee co-ordinates //ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€ÑƒÐµÐ¼ Ð´Ð»Ñ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ð¿ÐµÑ€Ð¸Ð³ÐµÑ
 									//   to epoch 1980.0
 	$Ec = kepler( $M, ECCENT );					// solve equation of Kepler
 	$Ec = sqrt( (1 + ECCENT) / (1 - ECCENT) ) * tan( $Ec / 2 );
@@ -428,65 +428,65 @@ return ($arg);  }
 
 
 	// Calculation of the Moon's position.
-	//Âû÷èñëåíèå ïîçèöèè Ëóíû.
+	//Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸ Ð›ÑƒÐ½Ñ‹.
 
-	// Moon's mean longitude. //íàõîäèì ñðåäíþþ äîëãîòó ëóíû
+	// Moon's mean longitude. //Ð½Ð°Ñ…Ð¾Ð´Ð¸Ð¼ ÑÑ€ÐµÐ´Ð½ÑŽÑŽ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ñƒ Ð»ÑƒÐ½Ñ‹
 	$ml = fixangle( 13.1763966 * $Day + MMLONG );
 
-	// Moon's mean anomaly. //íàõîäèì ñðåäíþþ àíîìàëèþ ëóíû
+	// Moon's mean anomaly. //Ð½Ð°Ñ…Ð¾Ð´Ð¸Ð¼ ÑÑ€ÐµÐ´Ð½ÑŽÑŽ Ð°Ð½Ð¾Ð¼Ð°Ð»Ð¸ÑŽ Ð»ÑƒÐ½Ñ‹
 	$MM = fixangle( $ml - 0.1114041 * $Day - MMLONGP );
 
-	// Moon's ascending node mean longitude. //íàõîäèì ñðåäíþþ äîëãîòó âîñõîäÿùåãî óçëà MN
+	// Moon's ascending node mean longitude. //Ð½Ð°Ñ…Ð¾Ð´Ð¸Ð¼ ÑÑ€ÐµÐ´Ð½ÑŽÑŽ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ñƒ Ð²Ð¾ÑÑ…Ð¾Ð´ÑÑ‰ÐµÐ³Ð¾ ÑƒÐ·Ð»Ð° MN
 	$MN = fixangle( MLNODE - 0.0529539 * $Day );
 
-	// Evection. //Ýâåêöèÿ
+	// Evection. //Ð­Ð²ÐµÐºÑ†Ð¸Ñ
 	$Ev = 1.2739 * sin( torad(2 * ($ml - $Lambdasun) - $MM) );
 
-	// Annual equation. // ãîäè÷íîå óðàâíåíèå
+	// Annual equation. // Ð³Ð¾Ð´Ð¸Ñ‡Ð½Ð¾Ðµ ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ
 	$Ae = 0.1858 * sin( torad($M) );
 
-	// Correction term. // òðåòüÿ ïîïðàâêà
+	// Correction term. // Ñ‚Ñ€ÐµÑ‚ÑŒÑ Ð¿Ð¾Ð¿Ñ€Ð°Ð²ÐºÐ°
 	$A3 = 0.37 * sin( torad($M) );
 
-	// Corrected anomaly. //Èñïðàâëåííàÿ ñðåäíÿÿ àíîìàëèÿ ëóíû
+	// Corrected anomaly. //Ð˜ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ð°Ñ ÑÑ€ÐµÐ´Ð½ÑÑ Ð°Ð½Ð¾Ð¼Ð°Ð»Ð¸Ñ Ð»ÑƒÐ½Ñ‹
 	$MmP = $MM + $Ev - $Ae - $A3;
 
-	// Correction for the equation of the centre. //ïîïðàâêà çà óðàâíåíèå öåíòðà
+	// Correction for the equation of the centre. //Ð¿Ð¾Ð¿Ñ€Ð°Ð²ÐºÐ° Ð·Ð° ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ Ñ†ÐµÐ½Ñ‚Ñ€Ð°
 	$mEc = 6.2886 * sin( torad($MmP) );
 
-	// Another correction term. //åùå îäíà ïîïðàâêà
+	// Another correction term. //ÐµÑ‰Ðµ Ð¾Ð´Ð½Ð° Ð¿Ð¾Ð¿Ñ€Ð°Ð²ÐºÐ°
 	$A4 = 0.214 * sin( torad(2 * $MmP) );
 
-	// Corrected longitude.////Èñïðàâëåííàÿ äîëãîòà.
+	// Corrected longitude.////Ð˜ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ð°Ñ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð°.
 	$lP = $ml + $Ev + $mEc - $Ae + $A4;
 
-	// Variation. //Èçìåíåíèå
+	// Variation. //Ð˜Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ
 	$V = 0.6583 * sin( torad(2 * ($lP - $Lambdasun)) );
 
-	// True longitude.//Èñòèííàÿ äîëãîòà.
+	// True longitude.//Ð˜ÑÑ‚Ð¸Ð½Ð½Ð°Ñ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð°.
 	$lPP = $lP + $V;
 
-	// Corrected longitude of the node.// Èñïðàâëåííàÿ äîëãîòà âîñõîäÿùåãî óçëà
+	// Corrected longitude of the node.// Ð˜ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ð°Ñ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð° Ð²Ð¾ÑÑ…Ð¾Ð´ÑÑ‰ÐµÐ³Ð¾ ÑƒÐ·Ð»Ð°
 	$NP = $MN - 0.16 * sin( torad($M) );
 
-	// Y inclination coordinate.	////Y êîîðäèíàòà ñêëîííîñòè.
+	// Y inclination coordinate.	////Y ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð° ÑÐºÐ»Ð¾Ð½Ð½Ð¾ÑÑ‚Ð¸.
 	$y = sin( torad($lPP - $NP) ) * cos( torad(MINC) );
 
-	// X inclination coordinate. //Õ êîîðäèíàòû ñêîííîñòè
+	// X inclination coordinate. //Ð¥ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ ÑÐºÐ¾Ð½Ð½Ð¾ÑÑ‚Ð¸
 	$x = cos(torad($lPP - $NP));
 
-	//Ýêëèïòè÷åñêàÿ äîëãîòà 
+	//Ð­ÐºÐ»Ð¸Ð¿Ñ‚Ð¸Ñ‡ÐµÑÐºÐ°Ñ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð° 
 	$Lambdamoon = todeg( atan2($y, $x) );
 	$Lambdamoon += $NP;
 
-	//Ýêëèïòè÷åñêàÿ øèðîòà 
+	//Ð­ÐºÐ»Ð¸Ð¿Ñ‚Ð¸Ñ‡ÐµÑÐºÐ°Ñ ÑˆÐ¸Ñ€Ð¾Ñ‚Ð° 
 	$BetaM = todeg( asin(sin(torad($lPP - $NP)) * sin(torad(MINC))) );
 
-	//Ïåðåâîäèì â ýêâàòîðèàëüíûå êîîðäèíàòû
+	//ÐŸÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ð¼ Ð² ÑÐºÐ²Ð°Ñ‚Ð¾Ñ€Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹
 	$alfa1=eliamba($BetaM,$Lambdamoon);
 	$beta1=ebeta($BetaM,$Lambdamoon);
 	
-	//Íàõîäèì êîîðäèíàòû Ëóíû ÷åðåç 12 ÷àñîâ
+	//ÐÐ°Ñ…Ð¾Ð´Ð¸Ð¼ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð›ÑƒÐ½Ñ‹ Ñ‡ÐµÑ€ÐµÐ· 12 Ñ‡Ð°ÑÐ¾Ð²
 	$betaSm=0.05*cos(torad($lPP-$NP));
 	$liambaSm=0.55+0.06*cos(torad($MmP));
 	$BetaM2=$BetaM+$betaSm*12;
@@ -494,32 +494,32 @@ return ($arg);  }
 	$beta2 = ebeta ($BetaM2,$Lambdamoon2); 
 	$alfa2 = eliamba($BetaM2,$Lambdamoon2);
 	
-	//Âû÷èñëåíèå ïîïðàâêè çà ïàðàëàêñ
-	$Fi=degtime4($Fi); //ãåîöåíòðè÷åñêàÿ øèðîòà íàáëþäàòåëÿ
-	$Dol=degtime4($Dol);//ãåîöåíòðè÷åñêàÿ äîëãîòà íàáëþäàòåëÿ
-	$h=0; //âûñîòà íàä óðîâíåì ìîðÿ
+	//Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð¿Ñ€Ð°Ð²ÐºÐ¸ Ð·Ð° Ð¿Ð°Ñ€Ð°Ð»Ð°ÐºÑ
+	$Fi=degtime4($Fi); //Ð³ÐµÐ¾Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ°Ñ ÑˆÐ¸Ñ€Ð¾Ñ‚Ð° Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»Ñ
+	$Dol=degtime4($Dol);//Ð³ÐµÐ¾Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ°Ñ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð° Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»Ñ
+	$h=0; //Ð²Ñ‹ÑÐ¾Ñ‚Ð° Ð½Ð°Ð´ ÑƒÑ€Ð¾Ð²Ð½ÐµÐ¼ Ð¼Ð¾Ñ€Ñ
 	$u=todeg(atan(0.996647*tan(torad($Fi))));
 	$PsinFi=(0.996647*sin(torad($u)))+(($h/6378140)*sin(torad($Fi)));
 	$PcosFi=(cos(torad($u)))+(($h/6378140)*cos(torad($Fi)));
 	
 	$betaI=($beta1+$beta2) / 2;
 	$Hgeo=todeg(acos(-tan(torad($Fi))*tan(torad($betaI))));
-	//ðàññòîÿíèå äî ëóíû îò öåíòðà çåìëè
+	//Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð´Ð¾ Ð»ÑƒÐ½Ñ‹ Ð¾Ñ‚ Ñ†ÐµÐ½Ñ‚Ñ€Ð° Ð·ÐµÐ¼Ð»Ð¸
 	$MoonDist = ( MSMAX * (1 - MECC * MECC)) / (1 + MECC * cos(torad($MmP + $mEc)) );
 	// Calculate Moon's angular diameter.
-	//Âû÷èñëÿåì óãëîâîé äèàìåòð Ëóíû.
+	//Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÑÐµÐ¼ ÑƒÐ³Ð»Ð¾Ð²Ð¾Ð¹ Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ Ð›ÑƒÐ½Ñ‹.
 	$MoonDFrac = $MoonDist / MSMAX;
 	$MoonAng = MANGSIZ / $MoonDFrac; //
 	// Calculate Moon's parallax.
-	//Âû÷èñëåíèå ïàðàëëàêñà Ëóíû.
-	$MoonPar = MPARALLAX / $MoonDFrac; //ãîðèçîíòàëüíûé ïàðàëàêñ ëóíû
-	//Âîçðàñò Ëóíû â ñòåïåíÿõ
+	//Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð°Ñ€Ð°Ð»Ð»Ð°ÐºÑÐ° Ð›ÑƒÐ½Ñ‹.
+	$MoonPar = MPARALLAX / $MoonDFrac; //Ð³Ð¾Ñ€Ð¸Ð·Ð¾Ð½Ñ‚Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð¿Ð°Ñ€Ð°Ð»Ð°ÐºÑ Ð»ÑƒÐ½Ñ‹
+	//Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð›ÑƒÐ½Ñ‹ Ð² ÑÑ‚ÐµÐ¿ÐµÐ½ÑÑ…
 	$MoonAge = $lPP - $Lambdasun;
 	$mage = SYNMONTH * ( fixangle($MoonAge) / 360.0 );
 	//
-	$r=60.268322*$MoonDFrac; //r - ðàñòîÿíèå îò íåáåñíîãî òåëà äî öåíòðà çåìëè
+	$r=60.268322*$MoonDFrac; //r - Ñ€Ð°ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð¾Ñ‚ Ð½ÐµÐ±ÐµÑÐ½Ð¾Ð³Ð¾ Ñ‚ÐµÐ»Ð° Ð´Ð¾ Ñ†ÐµÐ½Ñ‚Ñ€Ð° Ð·ÐµÐ¼Ð»Ð¸
 	//$r=1/sin(torad($MoonPar));
-	//Ïàðàëàêñ
+	//ÐŸÐ°Ñ€Ð°Ð»Ð°ÐºÑ
 	$Par1=todeg(atan(($PcosFi*sin(torad($Hgeo))) / ($r*cos(torad($beta1))-$PcosFi*cos(torad($Hgeo))))) / 15;
 	$Par2=todeg(atan(($PcosFi*sin(torad($Hgeo))) / ($r*cos(torad($beta2))-$PcosFi*cos(torad($Hgeo))))) / 15;
 	$alfaIs1=$alfa1-$Par1;
@@ -530,14 +530,14 @@ return ($arg);  }
 	$betaIs2=todeg(atan(cos(torad($His2)) * ($r*sin(torad($beta2))-$PsinFi) / ($r*cos(torad($beta2))*cos(torad($Hgeo))-$PcosFi)));
 	
 	
-	//âîñõîä è çàõîä ìåñòíîãî çâåçäíîãî âðåìåíè LST
+	//Ð²Ð¾ÑÑ…Ð¾Ð´ Ð¸ Ð·Ð°Ñ…Ð¾Ð´ Ð¼ÐµÑÑ‚Ð½Ð¾Ð³Ð¾ Ð·Ð²ÐµÐ·Ð´Ð½Ð¾Ð³Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ LST
 	$Hv1=(1/15)*(todeg(acos(-tan(torad($Fi))*tan(torad($betaIs1)))));
 	$Hv2=(1/15)*(todeg(acos(-tan(torad($Fi))*tan(torad($betaIs2)))));
 	$LSTr1=time24(24-$Hv1+$alfaIs1); 
 	$LSTr2=time24(24-$Hv2+$alfaIs2); 
 	$LSTs1=time24($alfaIs1+$Hv1); 
 	$LSTs2=time24($alfaIs2+$Hv2); 
-	//íàõîäèì íàèëó÷øåå ïðèáëåæåíèå
+	//Ð½Ð°Ñ…Ð¾Ð´Ð¸Ð¼ Ð½Ð°Ð¸Ð»ÑƒÑ‡ÑˆÐµÐµ Ð¿Ñ€Ð¸Ð±Ð»ÐµÐ¶ÐµÐ½Ð¸Ðµ
 	$TR=(12.03*$LSTr1) / (12.03+$LSTr1-$LSTr2);
 	$TS=(12.03*$LSTs1) / (12.03+$LSTs1-$LSTs2);
 	//
@@ -548,14 +548,14 @@ return ($arg);  }
 	$Xr=$R+($Diam/2);
 	$Yr=todeg(asin(sin(torad($Xr))/sin(torad($Fir))));
 	$Tp=240*$Yr/cos(torad($betaSr));
-	$Tp=$Tp / 3600; //ïåðåâîäèì â äîëè ÷àñà
+	$Tp=$Tp / 3600; //Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ð¼ Ð² Ð´Ð¾Ð»Ð¸ Ñ‡Ð°ÑÐ°
 	$Tri=time24($TR-$Tp);
 	$Tsi=time24($TS+$Tp);
-	//ïðåõîä îò ìåñòíîãî çâåçäíîãî âðåìåíè LST ê ãðèíâè÷åñêîìó çâåçäíîìó âðåìåíè GST
+	//Ð¿Ñ€ÐµÑ…Ð¾Ð´ Ð¾Ñ‚ Ð¼ÐµÑÑ‚Ð½Ð¾Ð³Ð¾ Ð·Ð²ÐµÐ·Ð´Ð½Ð¾Ð³Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ LST Ðº Ð³Ñ€Ð¸Ð½Ð²Ð¸Ñ‡ÐµÑÐºÐ¾Ð¼Ñƒ Ð·Ð²ÐµÐ·Ð´Ð½Ð¾Ð¼Ñƒ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ GST
 	$Doli=$Dol / 15;
 	//$Doli=0;
 	//$gm=4;
-	$GSTr=time24($Tri-$Doli); //åñëè äîëãîòà âîñòî÷íàÿ âû÷èòàåì, åñëè çàïàäíàÿ ïðèáàâëÿåì
+	$GSTr=time24($Tri-$Doli); //ÐµÑÐ»Ð¸ Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ð° Ð²Ð¾ÑÑ‚Ð¾Ñ‡Ð½Ð°Ñ Ð²Ñ‹Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼, ÐµÑÐ»Ð¸ Ð·Ð°Ð¿Ð°Ð´Ð½Ð°Ñ Ð¿Ñ€Ð¸Ð±Ð°Ð²Ð»ÑÐµÐ¼
 	$GSTs=time24($Tsi-$Doli);
 	
 	$TR=time24($TR-$Doli);
@@ -569,12 +569,12 @@ return ($arg);  }
 	
 	$TR=time24((($TR-$To)*0.997270)+$gm); 
 	$TS=time24((($TS-$To)*0.997270)+$gm);
-	$TR=degtime2($TR);      //ðåçóëüòàò áåç ïîïðàâàê
+	$TR=degtime2($TR);      //Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð±ÐµÐ· Ð¿Ð¾Ð¿Ñ€Ð°Ð²Ð°Ðº
 	$TS=degtime2($TS);
-	$GMTr=degtime2($GMTr);  //ðåçóëüòàò ñ ïîïðàâêàìè
+	$GMTr=degtime2($GMTr);  //Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ñ Ð¿Ð¾Ð¿Ñ€Ð°Ð²ÐºÐ°Ð¼Ð¸
 	$GMTs=degtime2($GMTs);
 	
-	//Ðàñ÷èòûâàåì òðàíçèò ëóíû ÷åðåç çíàêè çîäèàêà ÷åðåç ýêëèïòè÷. äîëãîòó ëóíû
+	//Ð Ð°ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ñ‚Ñ€Ð°Ð½Ð·Ð¸Ñ‚ Ð»ÑƒÐ½Ñ‹ Ñ‡ÐµÑ€ÐµÐ· Ð·Ð½Ð°ÐºÐ¸ Ð·Ð¾Ð´Ð¸Ð°ÐºÐ° Ñ‡ÐµÑ€ÐµÐ· ÑÐºÐ»Ð¸Ð¿Ñ‚Ð¸Ñ‡. Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ñƒ Ð»ÑƒÐ½Ñ‹
 	$moonlam=$Lambdamoon;if($Lambdamoon<0){$moonlam=360+$Lambdamoon;}
 	if($moonlam > 360) $moonlam-=360;
 	$moonlambada=$moonlam;
@@ -586,7 +586,7 @@ return ($arg);  }
 		 while($cikl < $moonlam);
 		 $zstart=($znak*$cikl)-$moonlambada; }
 		 $zstart=degtimeg($zstart);
-	//Ðàñ÷èòûâàåì òðàíçèò ëóíû ÷åðåç 28 ëóííûõ äîìîâ ÷åðåç ýêëèïòè÷. äîëãîòó ëóíû	
+	//Ð Ð°ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ñ‚Ñ€Ð°Ð½Ð·Ð¸Ñ‚ Ð»ÑƒÐ½Ñ‹ Ñ‡ÐµÑ€ÐµÐ· 28 Ð»ÑƒÐ½Ð½Ñ‹Ñ… Ð´Ð¾Ð¼Ð¾Ð² Ñ‡ÐµÑ€ÐµÐ· ÑÐºÐ»Ð¸Ð¿Ñ‚Ð¸Ñ‡. Ð´Ð¾Ð»Ð³Ð¾Ñ‚Ñƒ Ð»ÑƒÐ½Ñ‹	
 	$moonlam28=$Lambdamoon;
 	if($moonlam28 > 360) $moonlam28-=360;
 	$cikl28=360/28;
@@ -601,7 +601,7 @@ return ($arg);  }
 	
 	
 	// Phase of the Moon.
-	//Ôàçà ëóíû
+	//Ð¤Ð°Ð·Ð° Ð»ÑƒÐ½Ñ‹
 	$MoonPhase = (1 - cos(torad($MoonAge))) / 2;
 	$pphase = $MoonPhase;
 	$dist = $MoonDist;
@@ -613,8 +613,3 @@ return ($arg);  }
 
 	return array ( $mpfrac, $pphase, $mage, $dist, $angdia, $sudist, $suangdia, $GMTr, $GMTs, $GMTreal, $znak, $zstart, $znak28, $Fi, $Dol);
  }
-
-
-
-
-?>
